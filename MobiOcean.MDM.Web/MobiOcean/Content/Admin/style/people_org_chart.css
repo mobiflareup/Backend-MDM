@@ -1,0 +1,88 @@
+#PeopleOrgChartNodes table td { padding: 0; }
+.PeopleDiagram {
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	padding-bottom: 20px;
+}
+.PeopleDiagram table {
+	margin: 0 !important;
+	padding: 0;
+	_border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.PeopleDiagram table td {
+	padding: 0;
+}
+
+.PeopleHorisLine, .PeopleTopLine, .PeopleBottomLine, .PeopleVertLine {
+	width: 20px;
+	padding: 0; font-size: 0px;
+	background: none;
+	overflow: hidden;
+}
+
+.PeopleHorisLine {
+	height: 1px;
+	background: #999;
+	position: relative;
+	z-index: 10;	
+}
+
+.PeopleTopLine {
+	height: 30px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.PeopleBottomLine {
+	height: 50px;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+}
+
+td.PeopleVertLine {
+	border-left: 1px solid black;
+	vertical-align: middle;
+}
+
+.PeopleDiagramPersone {
+	border: 1px solid #ddd;
+	margin: 10px 0;
+	padding: 9px;
+	float: left;
+	position: relative;
+	min-height: 80px;
+	height: auto !important;
+	height: 80px;
+	z-index: 20;
+	-webkit-box-shadow: 0 1px 3px #eee;
+	   -moz-box-shadow: 0 1px 3px #eee;
+	        box-shadow: 0 1px 3px #eee;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+}
+.PeopleDiagramPersone img  {
+	float: left;
+}
+.PeopleDiagramDetails {
+	margin-left: 90px; 
+}
+/*html >body .PeopleDiagramPersone { width: 100%; }*/
+/*.PeopleDiagramPersone table { width: 100%; }*/
+
+/*.PeopleDiagramPersone a {
+	color: #1D368A;
+	text-decoration: none;
+	font-weight: bold;
+}*/
+.PeopleDiagramPersone a:hover { text-decoration: underline; }
+.PeopleDiagramPersone strong { display: block; }
+
+.PeopleOrgChartNode td strong, .PeopleOrgChartNode td {	text-align: left; }
+.PeopleOrgChartNode tr.Blue td strong { text-align: center; }
+.PeopleOrgChartNode td { padding: 3px !important; }

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96DC8EF2-1FDF-41B2-98DD-A302DF015323}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobiOcean.MDM.BAL</RootNamespace>
+    <AssemblyName>MobiOcean.MDM.BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.5.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.12\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAL\AckBAL.cs" />
+    <Compile Include="BAL\AlertBAL.cs" />
+    <Compile Include="BAL\AllowPhNoBAL.cs" />
+    <Compile Include="BAL\AppBAL.cs" />
+    <Compile Include="BAL\AppLogsBAL.cs" />
+    <Compile Include="BAL\AttendanceBAL.cs" />
+    <Compile Include="BAL\ChangePasswordBAL.cs" />
+    <Compile Include="BAL\ClientBAL.cs" />
+    <Compile Include="BAL\ContactBAL.cs" />
+    <Compile Include="BAL\ConveyanceBAL.cs" />
+    <Compile Include="BAL\CustomerBAL.cs" />
+    <Compile Include="BAL\DDLBAL.cs" />
+    <Compile Include="BAL\DeptBAL.cs" />
+    <Compile Include="BAL\DeviceInfoBAL.cs" />
+    <Compile Include="BAL\DocBAL.cs" />
+    <Compile Include="BAL\EkycBAL.cs" />
+    <Compile Include="BAL\FeatureBAL.cs" />
+    <Compile Include="BAL\FeatureCategoryList.cs" />
+    <Compile Include="BAL\FeedbackBAL.cs" />
+    <Compile Include="BAL\GenusBAL.cs" />
+    <Compile Include="BAL\PaymentNewBAL.cs" />
+    <Compile Include="Model\Constant.cs" />
+    <Compile Include="Model\CustomAppModel.cs" />
+    <Compile Include="Model\FileModel.cs" />
+    <Compile Include="BAL\FileUploadBAL.cs" />
+    <Compile Include="BAL\GCMBAL.cs" />
+    <Compile Include="BAL\GroupBAL.cs" />
+    <Compile Include="BAL\KeywordBAL.cs" />
+    <Compile Include="BAL\KSWDBAL.cs" />
+    <Compile Include="BAL\Loc.cs" />
+    <Compile Include="BAL\LocationBAL.cs" />
+    <Compile Include="BAL\LoginBAL.cs" />
+    <Compile Include="BAL\LomentBAL.cs" />
+    <Compile Include="BAL\LTCollegeVisitBAL.cs" />
+    <Compile Include="BAL\MadarsaBAL.cs" />
+    <Compile Include="BAL\MobiOceanProfileUpdateBAL.cs" />
+    <Compile Include="BAL\SendMailBAL.cs" />
+    <Compile Include="BAL\SendSMSBAL.cs" />
+    <Compile Include="Model\AppGroup.cs" />
+    <Compile Include="Model\BatteryInfo.cs" />
+    <Compile Include="Model\Calculation.cs" />
+    <Compile Include="Model\Calendar.cs" />
+    <Compile Include="Model\CallSmsLog.cs" />
+    <Compile Include="Model\Changepass.cs" />
+    <Compile Include="Model\ConstantBAL.cs" />
+    <Compile Include="Model\ContactList.cs" />
+    <Compile Include="Model\Credentials.cs" />
+    <Compile Include="Model\DeviceInfoHistory.cs" />
+    <Compile Include="Model\GenusAuth.cs" />
+    <Compile Include="Model\InternetConnectivity.cs" />
+    <Compile Include="Model\LocationModel.cs" />
+    <Compile Include="Model\LomentAPI.cs" />
+    <Compile Include="Model\LomentResponse.cs" />
+    <Compile Include="Model\MDMSrvcRef.cs" />
+    <Compile Include="Model\MdMVersionInfo.cs" />
+    <Compile Include="Model\NetworkInfo.cs" />
+    <Compile Include="Model\PaymentWebPage.cs" />
+    <Compile Include="Model\Policy.cs" />
+    <Compile Include="Model\Uninstall.cs" />
+    <Compile Include="Model\VPNModel.cs" />
+    <Compile Include="Model\WebsiteUrl.cs" />
+    <Compile Include="BAL\NewsSubBAL.cs" />
+    <Compile Include="BAL\NotificationBAL.cs" />
+    <Compile Include="BAL\OrderBAL.cs" />
+    <Compile Include="BAL\PaymentBAL.cs" />
+    <Compile Include="BAL\PermisesBAL.cs" />
+    <Compile Include="BAL\ProfileBAL.cs" />
+    <Compile Include="BAL\ProfileUserMappingBAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BAL\RoleBAL.cs" />
+    <Compile Include="BAL\RptBAL.cs" />
+    <Compile Include="BAL\SecureBAL.cs" />
+    <Compile Include="BAL\SensorBAL.cs" />
+    <Compile Include="Model\SensorModel.cs" />
+    <Compile Include="Query\AnuSearch.cs" />
+    <Compile Include="Query\GingerboxSrch.cs" />
+    <Compile Include="Query\PaymentResponse.cs" />
+    <Compile Include="Query\PaymentResponseNew.cs" />
+    <Compile Include="Query\RamuSearch.cs" />
+    <Compile Include="Model\RstDateTime.cs" />
+    <Compile Include="Query\VikramSearch.cs" />
+    <Compile Include="BAL\SOSBAL.cs" />
+    <Compile Include="BAL\SubscribeBAL.cs" />
+    <Compile Include="BAL\SupportBAL.cs" />
+    <Compile Include="BAL\TABAL.cs" />
+    <Compile Include="BAL\UploadBAL.cs" />
+    <Compile Include="BAL\UserBAL.cs" />
+    <Compile Include="BAL\UserDeviceBAL.cs" />
+    <Compile Include="BAL\usrBAL.cs" />
+    <Compile Include="BAL\WebsiteLogsBAL.cs" />
+    <Compile Include="BAL\WipePhoneBAL.cs" />
+    <Compile Include="Query\Watermark.cs" />
+    <Compile Include="Query\websearch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobiOcean.MDM.DAL\MobiOcean.MDM.DAL.csproj">
+      <Project>{d9c616a3-56d6-4d8d-84d0-51145f761c10}</Project>
+      <Name>MobiOcean.MDM.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MobiOcean.MDM.Infrastructure\MobiOcean.MDM.Infrastructure.csproj">
+      <Project>{db5007f4-1171-40a1-8bbb-3fa03093813e}</Project>
+      <Name>MobiOcean.MDM.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Query\logo-beta.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

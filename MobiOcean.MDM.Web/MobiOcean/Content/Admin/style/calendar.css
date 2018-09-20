@@ -1,0 +1,101 @@
+.cal_div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 178px;
+  border: 1px solid #ddd;
+  padding: 6px;
+  background-color: #fff;
+  z-index:10000 !important;
+  padding: 4px 0 4px 5px;
+  -webkit-box-shadow: 0 2px 3px #eee;
+     -moz-box-shadow: 0 2px 3px #eee;
+          box-shadow: 0 2px 3px #eee;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.cal_div div {
+	float:left;
+/*	border: solid 1px #A7A7A7;*/
+	padding:2px;
+	width: 18px;
+	text-align:center;
+	margin:1px;
+	font-size:11px;
+}
+div.days_container {
+	float:none;
+	border:0;
+	padding:0;
+	width: auto;
+	text-align:left;
+	margin:0;
+	display:inline;
+	}
+
+#empty_day .cal_day:hover {
+	cursor: inherit;
+	background: #fff;
+}
+.cal_div div.cal_day {
+border-color: #ffffff;
+background-color: #ffffff;
+cursor:pointer;
+}
+.cal_div div.cal_day:hover {
+background: #f3f3f3;	
+}
+.cal_div .week_days {
+  background:#D5D5D5;
+/*	border: solid 1px #A7A7A7;*/
+  margin: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+.cal_div .cal_header {
+	border: 0;
+	float: none;
+	clear: both;
+	width: 163px;
+	color: #333;
+	margin-bottom: 3px;
+	background: #ccc;
+	border-radius: 2px;
+}
+.cal_div .cal_header + .cal_header {
+	background: #dedede;
+}
+.cal_div .cal_header div {
+  margin:0;
+  padding:0;
+  cursor:pointer;
+}
+.cal_div .cal_header div:hover {
+	color: #666;
+}
+
+.cal_div .cal_header .right {
+	float: right;
+}
+.cal_div .selected {
+  font-weight:bold;
+  /*border: solid 1px #A7A7A7;*/
+  background: #0069D6;
+  color: #fff;
+  cursor: pointer;
+}
+.cal_div .selected:hover {
+	background: #ccc;
+}
+.cal_ie_iframe {
+	position: absolute;
+left:
+-1px;
+top: 0;
+z-index: -1;
+width: 171px;
+height:200px;
+filter: progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)
+};

@@ -1,0 +1,35 @@
+@media (max-width: 480px)
+{
+	.custom-bill-info-form
+	{
+		width:100%;
+		margin:0px auto;
+	}
+	.navbar-nav
+	{
+		text-align:center !important;
+	}
+	.welcom
+	{
+		margin-top:0%;
+	}
+     .modalPopup {
+            width: 100% !important;
+        }
+	.custon-btn-proceed
+	{
+		margin-bottom:15px;
+}
+    .popup1
+    {
+        left:0px !important;
+    }
+        .popup1 {
+            padding: 10px;
+            margin:auto;
+            position:absolute !important;
+            width:100%;
+            top:0px !important;
+        }
+
+}

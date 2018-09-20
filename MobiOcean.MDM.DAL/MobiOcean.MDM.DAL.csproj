@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9C616A3-56D6-4D8D-84D0-51145F761C10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobiOcean.MDM.DAL</RootNamespace>
+    <AssemblyName>MobiOcean.MDM.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.6\lib\net452\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\AckDAL.cs">
+      <DependentUpon>AckDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\AckDAL1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AckDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AlertDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AllowPhNoDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllowPhNoDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AppDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AppLogs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppLogs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AttendanceDAL.cs">
+      <DependentUpon>AttendanceDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\AttendanceDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CalendarList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CallSMSDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CallSMSDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ChangePasswordDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ClientDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ContactDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ContactListDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactListDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ConveyanceDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConveyanceDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CustomerDAL.cs">
+      <DependentUpon>CustomerDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\CustomerDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DDLDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DDLDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DeptDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeptDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DeviceInfoDAL.cs">
+      <DependentUpon>DeviceInfoDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\DeviceInfoDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceInfoDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DocDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EkycDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EkycDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FeatureDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeatureDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FeedbackDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FileUpload.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileUpload.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GCMDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GCMDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GenusDAL.cs">
+      <DependentUpon>GenusDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\GenusDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenusDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GroupDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\KeywordDal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KeywordDal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\KSWDDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KSWDDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LocationDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocationDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LoginDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LomentDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LomentDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LTCollegeVisitDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LTCollegeVisitDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MadarsaDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MadarsaDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MobiOceanProfileUpdateDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobiOceanProfileUpdateDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NewsSubDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsSubDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NotificationDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OrderDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PaymentDAL.cs">
+      <DependentUpon>PaymentDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\PaymentDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PermisesDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisesDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PhStnSynDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhStnSynDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ProfileDAL.cs">
+      <DependentUpon>ProfileDAL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\ProfileDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfileDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ProfileUserMappingDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfileUserMappingDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RoleDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RptDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SecureDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecureDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SensorDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SensorDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SOSDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SOSDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SubscribeDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubscribeDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SupportDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupportDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TADAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TADAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ThirdPartyDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThirdPartyDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TimeZoneDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeZoneDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UploadDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UploadDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserDeviceDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDeviceDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\usrDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>usrDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WebsiteLogsDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteLogsDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WipePhoneDAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WipePhoneDAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AckDAL.xsc">
+      <DependentUpon>AckDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AckDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AckDAL1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AckDAL.xss">
+      <DependentUpon>AckDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AlertDAL.xsc">
+      <DependentUpon>AlertDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AlertDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlertDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AlertDAL.xss">
+      <DependentUpon>AlertDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AllowPhNoDAL.xsc">
+      <DependentUpon>AllowPhNoDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AllowPhNoDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AllowPhNoDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AllowPhNoDAL.xss">
+      <DependentUpon>AllowPhNoDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AppDAL.xsc">
+      <DependentUpon>AppDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AppDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AppDAL.xss">
+      <DependentUpon>AppDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AppLogs.xsc">
+      <DependentUpon>AppLogs.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AppLogs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppLogs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AppLogs.xss">
+      <DependentUpon>AppLogs.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AttendanceDAL.xsc">
+      <DependentUpon>AttendanceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\AttendanceDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\AttendanceDAL.xss">
+      <DependentUpon>AttendanceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CalendarList.xsc">
+      <DependentUpon>CalendarList.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CalendarList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CalendarList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\CalendarList.xss">
+      <DependentUpon>CalendarList.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CallSMSDAL.xsc">
+      <DependentUpon>CallSMSDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CallSMSDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CallSMSDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\CallSMSDAL.xss">
+      <DependentUpon>CallSMSDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ChangePasswordDAL.xsc">
+      <DependentUpon>ChangePasswordDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ChangePasswordDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChangePasswordDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ChangePasswordDAL.xss">
+      <DependentUpon>ChangePasswordDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ClientDAL.xsc">
+      <DependentUpon>ClientDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ClientDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ClientDAL.xss">
+      <DependentUpon>ClientDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ContactDAL.xsc">
+      <DependentUpon>ContactDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ContactDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ContactDAL.xss">
+      <DependentUpon>ContactDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ContactListDAL.xsc">
+      <DependentUpon>ContactListDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ContactListDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactListDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ContactListDAL.xss">
+      <DependentUpon>ContactListDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ConveyanceDAL.xsc">
+      <DependentUpon>ConveyanceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ConveyanceDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConveyanceDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ConveyanceDAL.xss">
+      <DependentUpon>ConveyanceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CustomerDAL.xsc">
+      <DependentUpon>CustomerDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\CustomerDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\CustomerDAL.xss">
+      <DependentUpon>CustomerDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DDLDAL.xsc">
+      <DependentUpon>DDLDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DDLDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DDLDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\DDLDAL.xss">
+      <DependentUpon>DDLDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DeptDAL.xsc">
+      <DependentUpon>DeptDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DeptDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeptDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\DeptDAL.xss">
+      <DependentUpon>DeptDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DeviceInfoDAL.xsc">
+      <DependentUpon>DeviceInfoDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DeviceInfoDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeviceInfoDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\DeviceInfoDAL.xss">
+      <DependentUpon>DeviceInfoDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DocDAL.xsc">
+      <DependentUpon>DocDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\DocDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\DocDAL.xss">
+      <DependentUpon>DocDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\EkycDAL.xsc">
+      <DependentUpon>EkycDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\EkycDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EkycDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\EkycDAL.xss">
+      <DependentUpon>EkycDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FeatureDAL.xsc">
+      <DependentUpon>FeatureDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FeatureDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeatureDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\FeatureDAL.xss">
+      <DependentUpon>FeatureDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FeedbackDAL.xsc">
+      <DependentUpon>FeedbackDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FeedbackDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedbackDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\FeedbackDAL.xss">
+      <DependentUpon>FeedbackDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FileUpload.xsc">
+      <DependentUpon>FileUpload.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\FileUpload.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileUpload.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\FileUpload.xss">
+      <DependentUpon>FileUpload.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GCMDAL.xsc">
+      <DependentUpon>GCMDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GCMDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GCMDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\GCMDAL.xss">
+      <DependentUpon>GCMDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GenusDAL.xsc">
+      <DependentUpon>GenusDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GenusDAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenusDAL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\GenusDAL.xss">
+      <DependentUpon>GenusDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GroupDAL.xsc">
+      <DependentUpon>GroupDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\GroupDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GroupDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\GroupDAL.xss">
+      <DependentUpon>GroupDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\KeywordDal.xsc">
+      <DependentUpon>KeywordDal.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\KeywordDal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KeywordDal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\KeywordDal.xss">
+      <DependentUpon>KeywordDal.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\KSWDDAL.xsc">
+      <DependentUpon>KSWDDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\KSWDDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KSWDDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\KSWDDAL.xss">
+      <DependentUpon>KSWDDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LocationDAL.xsc">
+      <DependentUpon>LocationDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LocationDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LocationDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\LocationDAL.xss">
+      <DependentUpon>LocationDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LoginDAL.xsc">
+      <DependentUpon>LoginDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LoginDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\LoginDAL.xss">
+      <DependentUpon>LoginDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LomentDAL.xsc">
+      <DependentUpon>LomentDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LomentDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LomentDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\LomentDAL.xss">
+      <DependentUpon>LomentDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LTCollegeVisitDAL.xsc">
+      <DependentUpon>LTCollegeVisitDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\LTCollegeVisitDAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LTCollegeVisitDAL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\LTCollegeVisitDAL.xss">
+      <DependentUpon>LTCollegeVisitDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\MadarsaDAL.xsc">
+      <DependentUpon>MadarsaDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\MadarsaDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MadarsaDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\MadarsaDAL.xss">
+      <DependentUpon>MadarsaDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\MobiOceanProfileUpdateDAL.xsc">
+      <DependentUpon>MobiOceanProfileUpdateDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\MobiOceanProfileUpdateDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MobiOceanProfileUpdateDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\MobiOceanProfileUpdateDAL.xss">
+      <DependentUpon>MobiOceanProfileUpdateDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\NewsSubDAL.xsc">
+      <DependentUpon>NewsSubDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\NewsSubDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewsSubDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\NewsSubDAL.xss">
+      <DependentUpon>NewsSubDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\NotificationDAL.xsc">
+      <DependentUpon>NotificationDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\NotificationDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NotificationDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\NotificationDAL.xss">
+      <DependentUpon>NotificationDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\OrderDAL.xsc">
+      <DependentUpon>OrderDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\OrderDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\OrderDAL.xss">
+      <DependentUpon>OrderDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PaymentDAL.xsc">
+      <DependentUpon>PaymentDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PaymentDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\PaymentDAL.xss">
+      <DependentUpon>PaymentDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PermisesDAL.xsc">
+      <DependentUpon>PermisesDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PermisesDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PermisesDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\PermisesDAL.xss">
+      <DependentUpon>PermisesDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PhStnSynDAL.xsc">
+      <DependentUpon>PhStnSynDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\PhStnSynDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhStnSynDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\PhStnSynDAL.xss">
+      <DependentUpon>PhStnSynDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ProfileDAL.xsc">
+      <DependentUpon>ProfileDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ProfileDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProfileDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ProfileDAL.xss">
+      <DependentUpon>ProfileDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ProfileUserMappingDAL.xsc">
+      <DependentUpon>ProfileUserMappingDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ProfileUserMappingDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProfileUserMappingDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ProfileUserMappingDAL.xss">
+      <DependentUpon>ProfileUserMappingDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\RoleDAL.xsc">
+      <DependentUpon>RoleDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\RoleDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoleDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\RoleDAL.xss">
+      <DependentUpon>RoleDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\RptDAL.xsc">
+      <DependentUpon>RptDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\RptDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\RptDAL.xss">
+      <DependentUpon>RptDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SecureDAL.xsc">
+      <DependentUpon>SecureDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SecureDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SecureDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\SecureDAL.xss">
+      <DependentUpon>SecureDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SensorDAL.xsc">
+      <DependentUpon>SensorDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SensorDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SensorDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\SensorDAL.xss">
+      <DependentUpon>SensorDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SOSDAL.xsc">
+      <DependentUpon>SOSDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SOSDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SOSDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\SOSDAL.xss">
+      <DependentUpon>SOSDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SubscribeDAL.xsc">
+      <DependentUpon>SubscribeDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SubscribeDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubscribeDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\SubscribeDAL.xss">
+      <DependentUpon>SubscribeDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SupportDAL.xsc">
+      <DependentUpon>SupportDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\SupportDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SupportDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\SupportDAL.xss">
+      <DependentUpon>SupportDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\TADAL.xsc">
+      <DependentUpon>TADAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\TADAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TADAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\TADAL.xss">
+      <DependentUpon>TADAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ThirdPartyDAL.xsc">
+      <DependentUpon>ThirdPartyDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\ThirdPartyDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThirdPartyDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\ThirdPartyDAL.xss">
+      <DependentUpon>ThirdPartyDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\TimeZoneDAL.xsc">
+      <DependentUpon>TimeZoneDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\TimeZoneDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimeZoneDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\TimeZoneDAL.xss">
+      <DependentUpon>TimeZoneDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UploadDAL.xsc">
+      <DependentUpon>UploadDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UploadDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UploadDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\UploadDAL.xss">
+      <DependentUpon>UploadDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UserDAL.xsc">
+      <DependentUpon>UserDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UserDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\UserDAL.xss">
+      <DependentUpon>UserDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UserDeviceDAL.xsc">
+      <DependentUpon>UserDeviceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\UserDeviceDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserDeviceDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\UserDeviceDAL.xss">
+      <DependentUpon>UserDeviceDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\usrDAL.xsc">
+      <DependentUpon>usrDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\usrDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>usrDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\usrDAL.xss">
+      <DependentUpon>usrDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\WebsiteLogsDAL.xsc">
+      <DependentUpon>WebsiteLogsDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\WebsiteLogsDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WebsiteLogsDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\WebsiteLogsDAL.xss">
+      <DependentUpon>WebsiteLogsDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\WipePhoneDAL.xsc">
+      <DependentUpon>WipePhoneDAL.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\WipePhoneDAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WipePhoneDAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\WipePhoneDAL.xss">
+      <DependentUpon>WipePhoneDAL.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

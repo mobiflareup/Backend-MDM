@@ -1,0 +1,618 @@
+#DocListOptions a {
+	margin-left: 10px;
+	font-size: 10px;
+	letter-spacing: -0.05em;
+}
+
+#DocsListPath {
+	padding-bottom: 5px;
+}
+
+#DocsListPath img {
+	vertical-align: middle;
+}
+
+#DocsListTable { clear: both; }
+
+#DocsCheckedList, #DocsWorkflowList, .DocsClipboard {
+	clear: both;
+}
+
+#DocsCheckedList {
+	border: 2px solid #AE000B !important;
+}
+
+#DocsWorkflowList {
+	border: 2px solid #00A82B;
+}
+
+#DocsWorkflowList caption { text-align: right; }
+#DocsWorkflowList caption span { float: left; }
+
+table.DocsClipboard {
+	border: 2px solid #333333;
+}
+
+#DocsListTable a span {
+	color: #008000;
+}
+
+#DocsMovementReason {
+	width: auto;
+	vertical-align: middle;
+	height: 40px;
+}
+
+#DocsReports ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding: 0 0 0 10px;
+}
+
+#DocsReports ul li {
+	padding: 0;
+	margin: 0;
+	line-height:1.2em;
+}
+
+#DocsReports table.table_metadata {
+	margin-top: 10px;
+}
+
+td.DocsReportsFilterTo {
+	padding-left: 10px;
+}
+
+* html #DocsAdd .checkb {
+	position: relative;
+	left: -4px;
+}
+
+#DocsAddWFSelect {
+	font-family: "Courier New", Courier, monospace!important;
+	vertical-align: baseline;
+}
+
+.DocsAddEncrypt {
+/*	background: #E0E8FF;*/
+	background: #d4dae0 url(/images/default/menu/boxtit_bg.gif) repeat-x top;
+}
+
+/* Documents -> Workflow */
+#DocsWorkflowTable tbody td,
+#DocsWorkflowTable thead th {
+	text-align: center;
+}
+
+/* ������ */
+sup.accent {
+	color: red;
+	font-weight: bold;
+}
+
+/* Workflow ->  Transition list table */
+#DocsWorkflowTransTable {
+	border: 1px solid #e5e8eb;/*#BEC6D2*/
+}
+
+#DocsWorkflowTransTable tbody td,
+#DocsWorkflowTransTable th {
+	text-align: center!important;
+}
+
+#DocsWorkflowTransTable td {
+	height: auto;
+}
+
+.transition {
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+.DocsInfoConfirmTrans {
+	list-style: square inside;
+	margin: 0px;
+	padding: 0px;
+}
+
+.DocsInfoConfirmTrans li {
+	margin-left: 1em;
+}
+
+#object_properties_area_id ul,
+#object_attributes_area_id ul {
+	list-style: none !important;
+}
+
+#DocsMetaSearch label {
+	margin-right: 1em;
+}
+
+#DocsMetaSearchTable td {
+	vertical-align: bottom;
+}
+
+#DocsMetaSearchCondition td {
+	vertical-align: top;
+	line-height: 20px;
+}
+
+select.DocsMetaSearchSelect {
+	margin-left: 3px;
+	width: 9em;
+}
+
+#DocsRemindSendIM {
+	margin-left: 2em;
+}
+
+#DocsCheckOutText {
+	margin-left: 1em;
+}
+
+#DocsCheckOutHint {
+	width: 570px;
+	padding:1em 1.2em!important
+}
+
+#DocsCheckOutHint img {
+	display: block;
+}
+
+#DocsCheckOutContent {
+	margin-bottom: 1.5em;
+}
+
+.DocsCheckOutTips {
+	background: #F3F4F8;
+	width: 570px;
+	margin-top: 1.5em; padding:1em 1.2em!important
+}
+
+#DocsChMetaData {
+	clear: both;
+}
+
+.DocsMD5Success {
+	color: green;
+	font-weight: bold;
+}
+
+.erms_tree td {
+	padding: 0;
+	line-height: 22px;
+	border-bottom: 1px solid #eee;
+	border-top: 0;
+}
+
+.erms_tree img {
+	display: inline;
+	vertical-align: middle;
+	margin: 0 3px 0 0;
+}
+
+/*#DocsReminderMessage {
+	margin-top: 1em;
+	margin-left: 2px;
+	padding: 0.2em;
+	border-collapse: separate;
+	border: 1px solid #A9AAAE;
+	width: 400px;
+}
+*/
+#DocsRemindOptions {
+	vertical-align: bottom;
+}
+
+#DocsAddArc {
+	width: 700px;
+}
+
+#DocsAddArc pre {
+	border: 1px solid #A9AAAE;
+	background: #E7E7E7;
+	overflow: auto;
+	font-family: "Courier New", Courier, monospace;
+	padding-bottom: 1em;
+}
+
+#DocsAddArc fieldset {
+	margin-left: 0 !important ;
+	margin-right: 0 !important ;
+}
+
+#DocsDetails .table_metadata td,
+#DocsDetails .table_metadata th {
+	border-bottom: 1px solid #A9AAAE;
+}
+
+#single_folder_id, #single_rectype_id, #multiple_folder_id, #multiple_location_id {
+	width: 250px;
+}
+
+#DocsDynamicFoldersTree, #ftree1, #CU_tree {
+	width: 250px;
+	height: 370px;
+	float: left;
+	border: 1px solid #dddddd;
+	margin-right: 10px;
+	overflow: auto;
+}
+.DocsDynamicBox, .DocsDynamicBox1 {
+	height: 380px;
+	border: 1px solid #dddddd;
+	padding: 4px;
+	overflow: auto;
+}
+
+.DocsDynamicBox2 {
+	float: left;
+	height: 465px;
+	width: 298px;
+	padding: 4px;
+	overflow: auto;
+	border: 1px solid #ddd;	
+}
+
+.DocsDynamicBox {
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: expression(this.offsetHeight - 2 < this.scrollHeight? '20px': '4px');
+}
+
+.DocsDynamicBox .table_docs {
+	table-layout: fixed;
+	margin-bottom: 0;
+}
+.DocsDynamicBox .dynamic_table_item {
+	display: block;
+	overflow-x: hidden;
+	white-space: nowrap;
+}
+.DocsDynamicBox .dynamic_table_item input {
+	margin-bottom: 0!important;	
+}
+
+
+#doc_loading, #doc_details1 {
+	border: 1px solid #dddddd;
+}
+
+.DocsFilterComponent td, .DocsFilterComponent th { padding: 0 2px 0 2px; white-space: nowrap;}
+.DocsFilterComponent img { cursor: pointer; }
+
+#uploadlist td { overflow: hidden; }
+#main #uploadlist tfoot td{
+	background: white !important;
+}
+
+#progbar {
+	margin: 7px 0 7px 0;
+	border: 1px solid black;
+	width: 300px;
+	height: 6px;
+}
+
+#DocsListComponentThumb div {
+	margin: 0 10px 10px 0px;
+	float: left;
+	width: 135px !important;
+	border: 1px solid black;
+	padding: 4px;
+}
+
+#DocsListComponentThumb div.table_options {
+	width: auto !important;
+	float: none;
+	clear: left;
+	text-align: right;
+	border-width: 1px 0 0 0;
+}
+
+#DocsListComponentThumb table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+#DocsListComponentThumb td {
+	vertical-align: middle;
+	height: 1.5em;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#DocsListComponentThumb td.thumb {
+	border: 1px solid #aaaaaa;
+	height: 125px; width: 125px;
+}
+
+#DocsListComponentThumb td.thumb img {
+	display: block;
+	margin: 0 auto 0 auto;
+}
+
+#DocsEditWFComment {
+	border-left: 1px solid #A9AAAE;
+	vertical-align: middle!important;
+	text-align: center;
+}
+#DocsEditWFComment input {
+	border: 1px solid #A5ACB2;
+	background: #F3F3F3;
+}
+
+#DocsListComponentRes {
+	table-layout: fixed;
+}
+#DocsListComponentRes td, #DocsListComponentRes span {
+	overflow: hidden;
+	white-space: nowrap;
+	border: 0;
+}
+
+#DocsDinamicTableRes {
+	table-layout: fixed;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#DocsDinamicTableRes td, #DocsDinamicTableRes th {
+	white-space: nowrap;
+	overflow: hidden;
+	height: 25px;
+	padding: 0;
+}
+
+#DocsDinamicTableRes th input {
+	margin-left: 9px!important; margin-left: 5px;
+}
+
+.table_options h4 {
+	float:left;
+}
+
+.NoBorderHead { border-width: 0 1px 0 0 !important; }
+table.table_docs td.NoPadding { padding: 0!important; }
+table.table_docs th.NoPadding { padding: 0 0 0 5px; }
+
+.DocsScrolledBox {
+	min-width: 125px;
+	max-height: 100px;
+	white-space: nowrap;
+	overflow: auto;
+	height: expression(this.scrollHeight>100?"100px":"auto")
+}
+
+
+#DocsHeadLayout { border-collapse: collapse; }
+
+#DocsHeadLayout .doc_title td, #DocsHeadLayout .page_title td {
+	font-family: Trebuchet MS;
+	vertical-align: middle;
+	padding-bottom: 2px;
+	color: #006699;
+}
+
+#DocsHeadLayout td.head { padding-left: 10px; }
+
+#DocsHeadLayout td.head .size {
+	font-family: Tahoma;
+}
+
+#DocsHeadLayout td.head .subhead {
+	font-size: 0.8em; font-weight: normal;
+}
+
+#DocsHeadLayout .page_title td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #8E9FA8;
+	font-weight: bold;
+	border-top: 1px solid #C2C6D1;
+}
+
+#DocsHeadLayout td.links {
+	vertical-align: bottom;
+	text-align: right;
+	white-space: nowrap;
+}
+#DocsHeadLayout td.links img { vertical-align: middle; }
+
+#DocsLayout td {
+	vertical-align: top; 
+}
+
+td.actions ul {
+	color: #999999;
+	list-style: none;
+	padding: 0 0 10px 0;
+	margin: 0 auto 5px auto;
+	display: block;
+
+}
+
+.main_actions li {
+	display: table;
+	zoom: 1;
+}
+.main_actions li div, .main_actions li .icon {
+	display: table-cell;
+	vertical-align: top;
+}
+
+* html .main_actions li div, * html .main_actions li .icon {
+	float: left; clear: right;
+}
+
+*+html .main_actions li div, *+html .main_actions li .icon {
+	float: left; clear: right;
+}
+
+.main_actions li div {
+	padding-top: 2px;
+	padding-bottom: 4px;
+}
+ul.main_actions .title {
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Trebuchet MS;
+	line-height: normal;
+}
+ul.main_actions span {
+	font-size: 10px;
+	line-height: 1.2em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+td.actions ul.main_actions {
+	border-bottom: 1px solid #D3D5DC;
+	width: 80%;
+	padding: 0 10px 10px 10px;
+}
+
+ul.sec_actions {
+	width: 60%;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+ul.sec_actions li {
+	display: block;
+/*	line-height: 0.8em!important; line-height: 1em;*/
+	margin-bottom: 1em;
+	font-weight: bold;
+	padding-left: 24px;
+}
+ul.sec_actions img {
+	vertical-align: middle;
+	margin-left: -24px;
+	margin-bottom: -4px;
+}
+/* Tabs */
+#DocsDetailsNav {
+	margin: 0; padding: 0;
+	list-style: none;
+	border-left: 1px solid #C2C6D1;
+	border-bottom: 1px solid #C2C6D1;
+}
+
+#DocsDetailsNav li {
+	display: block;
+	position: relative;
+	float: left;
+	text-align: center;
+	border: solid #C2C6D1;
+	padding: 5px 0;
+	border-width: 1px 1px 1px 0;
+	background: White;
+	position: relative;
+}
+
+#DocsDetailsNav li a {
+	margin: 0 10px;
+	font-weight: bold;	
+	color: #006699;
+}
+
+#DocsDetailsNav li.active {
+	margin-bottom: -2px!important; margin-bottom: -1px;
+	border-bottom: 1px solid #F3F3F3;	
+	background: #F3F3F3;
+}
+
+div.DocsDetailsTabs {
+	clear: both;
+	border: solid #C2C6D1;
+	border-width: 0px 1px 1px 1px;
+	background: #F3F3F3;
+	padding: 20px 10px;
+}
+
+table.DocsDetailsTabs {
+	border-collapse: collapse;
+	padding: 0; margin: 0;
+	border: solid #C2C6D1;
+	border-width: 0 1px 1px 1px;
+	background: #F3F3F3;
+}
+
+.DocsDetailsTabs a {
+	color: #006699!important;
+}
+
+div.DocsDetailsTabs td {
+	padding: 0 3px;
+	height: 1.8em;
+	vertical-align: top;
+	line-height: 1.8em;
+}
+div.DocsDetailsTabs th {
+	vertical-align: top;
+	font-weight: normal;
+	line-height: 1.8em;
+	text-align: left;
+}
+.DocsDetailsTabs .table_metadata th {
+	font-weight: bold;
+}
+.DocsDetailsTabs .table_metadata td,
+.DocsDetailsTabs .table_metadata th {
+	border-bottom: 1px solid #A9AAAE;
+	vertical-align: middle;
+	color: #333333;
+}
+
+.DocsDetailsTabs .table_metadata img {
+	vertical-align: middle;
+}
+
+.DocsDetailsTabs .Size {
+	text-align: right!important;
+	padding-right: 10px;
+}
+
+/*#DocsMainContent { min-width: 70%; float: left; }*/
+/** html #DocsMainContent { width: 70%; }*/
+/*#DocsMainContent .table_form {
+	padding-top: 15px;
+	line-height: 1.6em; 
+}*/
+
+#DocsCheckOutTip {
+	border: 2px solid #48AA00; padding: 10px 8px;
+}
+
+.table_filter_tool#DocsAdvSearch {
+	padding: 10px;
+	margin: 0;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+}
+
+#DocsAdvSearch.fulltextSearch {
+	margin-left: 320px;
+}
+
+#DocsAdvSearch th { padding-left: 4px; color: #444444; font-weight: normal; padding-right: 0.5em; }
+#DocsAdvSearch td, #DocsAdvSearch th {
+	vertical-align: middle;
+	/*line-height: 0.9em;*/
+	padding-bottom: 0.1em;
+}
+#DocsAdvSearch td label {
+	white-space: nowrap;
+}
+#DocsAdvSearch .submit_bttn { margin-left: 0.5em; }
+#DocsAdvSearch .input_text {
+	width: 100px;
+}
+#DocsAdvSearch .date {
+	padding-left: 1em;
+	white-space: nowrap;
+}
+#object_properties_area_id {
+	overflow: hidden;
+	height: auto!important; height: 1%;
+}
+
+.DocsDetailsTabs .TimePickerRow {
+	line-height: normal;
+}

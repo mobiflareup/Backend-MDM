@@ -1,0 +1,196 @@
+    <table>
+    <thead>
+        <tr>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=EmpCompanyId&amp;sortdir=ASC">Employee Company Id</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=UserName&amp;sortdir=ASC">User Name</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=AttendanceDate&amp;sortdir=ASC">Attendance Date</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=InTime&amp;sortdir=ASC">In Time</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=InLocation&amp;sortdir=ASC">In Location</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=OutTime&amp;sortdir=ASC">Out Time</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=OutLocation&amp;sortdir=ASC">Out Location</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=TotalHours&amp;sortdir=ASC">Total Hours</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=InType&amp;sortdir=ASC">In Type</a>            </th>
+            <th scope="col">
+<a href="/Admin/Attendance/AttendanceExcel?EmployeeId=&amp;EmployeeName=&amp;FromDate=07-Aug-2017&amp;ToDate=09-Aug-2017&amp;BranchName=undefined&amp;DeptName=undefined&amp;sort=OutType&amp;sortdir=ASC">Out Type</a>            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GB001</td>
+            <td>Test1</td>
+            <td>09-Aug-2017</td>
+            <td>10:00</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Self</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>Demo100</td>
+            <td>Anupriya </td>
+            <td>09-Aug-2017</td>
+            <td>10:00</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Self</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB006</td>
+            <td>Veerendran</td>
+            <td>08-Aug-2017</td>
+            <td>08:59</td>
+            <td>Location not found</td>
+            <td>10:01</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>01:02:00</td>
+            <td>Manual</td>
+            <td>Manual</td>
+        </tr>
+        <tr>
+            <td>GB007</td>
+            <td>Yoganathan</td>
+            <td>08-Aug-2017</td>
+            <td>08:59</td>
+            <td>Location not found</td>
+            <td>10:01</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>01:02:00</td>
+            <td>Manual</td>
+            <td>Manual</td>
+        </tr>
+        <tr>
+            <td>MO1</td>
+            <td>Admin</td>
+            <td>08-Aug-2017</td>
+            <td>08:59</td>
+            <td>Location not found</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB004</td>
+            <td>Sivamurugu</td>
+            <td>08-Aug-2017</td>
+            <td>09:00</td>
+            <td>Location not found</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>FingerPrint</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB004</td>
+            <td>Sivamurugu</td>
+            <td>07-Aug-2017</td>
+            <td>09:49</td>
+            <td>Location not found</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>FingerPrint</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB002</td>
+            <td>Rajasekaran</td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>FingerPrint</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB006</td>
+            <td>Veerendran</td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB007</td>
+            <td>Yoganathan</td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>MO1</td>
+            <td>Admin</td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB001</td>
+            <td>Test1</td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>Demo100</td>
+            <td>Anupriya </td>
+            <td>07-Aug-2017</td>
+            <td>09:50</td>
+            <td>14, Arcot Rd, Bharani Colony, Kannika Puram, Saligramam, Chennai, Tamil Nadu 600093, India</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Manual</td>
+            <td>Self</td>
+        </tr>
+        <tr>
+            <td>GB2</td>
+            <td>Saurabh Aggarwal</td>
+            <td>07-aug-2017</td>
+            <td>10:00</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            <td>00:00:00</td>
+            <td>Self</td>
+            <td>Self</td>
+        </tr>
+    </tbody>
+    </table>

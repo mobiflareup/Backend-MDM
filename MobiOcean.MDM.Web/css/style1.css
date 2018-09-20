@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+.container{width:1280px; margin:0;}
+.left_box{margin:0;padding:0; font-size:36px; text-align:center;}
+.right_box{margin:10px 0 0 0;padding:0;text-align:center;}
+;
+.button_1{margin:0;padding:0;}
+.size{width:100%; margin:0 ;padding:5px  5px  10px  5px ;}
+.size1{width:100%; margin:0;padding:5px  5px  10px  30px ; background-color:blue;}
+.text1{margin:10px 20px 0 0 ;padding:0;}
+.text2{margin:10px 0 0 20px ;padding:0;}
+.text3{margin:10px 0 0 20px ;padding:0;}
+.button_2{margin:0;padding:0 ;}
+.button_3{margin:0;padding:0 ;}
+.horizential{margin:20px 0 0 ;padding:0; font-size:50spx; color:2px solid rgba(237,41,44,1.00);}
+.heading{margin:0;padding:0; font-size:50px; text-align:center; font-weight:bold;}
+.right_text{margin:10px 0 0 0;padding:0;}
+.article{margin:30px 0 0 0;padding:0;text-align:center;}
+.aside_text{margin:30px 0 0 0;padding:0; text-align:center;}
+.first{ margin:0;padding:0; }
+.second{margin:0;padding:0; }
+.thired{margin:0;padding:0;}
+.aside_text2{margin:50px 0 0 0;padding:0; text-align:center;}
+.text_aside1{margin:20px 0 0 0;padding:0;}
+.text_aside1 ul{}
+.text_aside1 ul li{list-style:none; display:inline; margin:0 0 0 40px; text-decoration:none;}
+
+.text_aside2{margin:20px 0 0 0;padding:0;}
+.text_aside2 ul{}
+.text_aside2 ul li{list-style:none; display:inline; margin:0 0 0 50px; text-decoration:none;}
+ 
+ .text_aside3{margin:20px 0 0 0;padding:0;}
+.text_aside3 ul{}
+.text_aside3 ul li{list-style:none; display:inline; margin:0 0 0 40px; text-decoration:none;}
+ .text0{font-size:30px;}
+ .footer{margin:90px 0 0 0 ;paddig:0;}
+ .footer_image{margin:40px 0 0 0;padding:0; background-color:blue;}
+ .fot_text1{color:white;}
+ .footer_text{margin:40px 0 0 0;padding:0;}
+ .footer_line{margin:0;padding:0; color:rgba(66,66,66,1.00); font-size:large; text-align:center;}
+ .footer_name{margin:0;padding:0; text-align:center;}
+ .footer_name p{margin:0;padding:0;  font-weight:bold;}
+ .but_text{color:white; margin:10px 10px 10px 10px;padding:0;}
+ .but_text a:hover{background-color:blue; color:white;}
+ .pra{margin:20px 0 0 0;padding:0;}

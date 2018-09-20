@@ -1,0 +1,665 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**************************
+ * BREADCRUMB
+ **************************/
+.breadcrumb {
+  float: left;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.breadcrumb:hover {
+  border-color: #ddd;
+  -webkit-box-shadow: 0 5px 5px -3px #eee, inset 0 0 5px #fff;
+     -moz-box-shadow: 0 5px 5px -3px #eee, inset 0 0 5px #fff;
+          box-shadow: 0 5px 5px -3px #eee, inset 0 0 5px #fff;
+}
+.breadcrumb > li {
+	float: left;
+	position: relative;
+  display: block;
+	border-right: 1px solid transparent;
+}
+.breadcrumb li+li {
+	border-left: 1px solid transparent;
+	margin-left: -1px;
+}
+.breadcrumb  a {
+	padding: 6px 7px;
+	display: block;
+}
+.breadcrumb .last_crumb a {
+  display: inline-block;
+  padding: 6px 3px 6px 6px;
+}
+.breadcrumb .last_crumb a + a {
+  padding: 6px 6px 6px 3px;
+}
+.breadcrumb a .pointer {
+  background: url(/images/icons/iconset.png) -2px -320px no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  text-indent: -999em;
+}
+.breadcrumb > li:hover {
+  background: #f5f5f5;
+  border-right: 1px solid #ddd;
+}
+.breadcrumb > li+li:hover {
+  border-left: 1px solid #ddd;
+}
+.breadcrumb li:hover a .pointer {
+  background-position: -22px -320px;
+}
+.breadcrumb-node {
+  position: relative;
+  z-index: 20;
+}
+.breadcrumb ul {
+  left: -999em;
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 14em;
+  z-index: 320;
+  border: 1px solid #ddd;
+  border-top: 1px solid #eee;
+  max-height: 120px;
+  overflow: auto;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.breadcrumb li:hover ul {
+	left: -1px;
+}
+.breadcrumb ul li {
+  border-top: 1px solid #f1f1f1;
+  display: block;
+}
+.breadcrumb ul a {
+  display: block;
+  -webkit-transition: background .2s linear;
+     -moz-transition: background .2s linear;
+      -ms-transition: background .2s linear;
+       -o-transition: background .2s linear;
+          transition: background .2s linear;
+}
+.breadcrumb ul a:hover {
+  background: #f5f5f5;
+}
+.breadcrumb ul a.current {
+  font-weight: bold;
+}
+
+.documentPreview .breadcrumb li a .pointer {
+  margin: 0px 0 2px;
+}
+.documentPreview .breadcrumb li:hover a .pointer {
+  background-position: -2px -320px;
+}
+
+/**************************
+ * DOCUMENT SEARCH
+ **************************/
+.documentSearch .input-text {
+  margin: 4px 0 0;
+  position: relative;
+}
+.documentSearch input.search {
+  padding-left: 22px;
+  margin: 4px 0;
+}
+.documentSearch .reset {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  cursor: pointer;
+  margin-left: -22px;
+  margin-top: 7px;
+}
+.documentSearch .cla-icon-lightning,
+.documentSearch .cla-icon-find {
+  display: block;
+  cursor: pointer;
+  margin: 10px 0 0 5px;
+  position: absolute;
+  z-index: 2;
+  height: 16px;
+  width: 16px;
+  text-indent: -999em;
+  text-align: left;
+  padding: 0;
+  background: url(/images/icons/iconset.png) no-repeat -320px -60px;
+}
+.documentSearch .cla-icon-lightning {
+  background-position: -260px -20px;
+}
+.documentSearch .cla-icon-find {
+  display: none;
+}
+.cla-input-filter input,
+.cla-input-search input {
+  position: absolute;
+  left: -999em;
+}
+
+
+/**************************
+ * DOCUMENT SORTING
+ **************************/
+.documentSort label {
+  float: right;
+  display: block;
+  white-space: nowrap;
+  padding: 0;
+  margin: 4px 0;
+  width: 140px;
+}
+.documentParent {
+  float: left;
+  margin: 6px 6px 0;
+}
+
+
+/**************************
+ * PARENT FOLDER
+ **************************/
+.parentFolder {
+  font-size: 11px;
+  margin-top: 5px;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  float: left;
+  width: 100%;
+  min-height: 26px;
+  height: auto !important;
+  height: 26px;
+  -webkit-transition: background .2s linear, border .2s linear;
+     -moz-transition: background .2s linear, border .2s linear;
+          transition: background .2s linear, border .2s linear;
+}
+.parentFolder:hover {
+  border-color: #ddd;
+}
+.parentFolder input {
+  float: left;
+  position: relative;
+  margin: 8px 0 0 6px;
+}
+.ie7 .parentFolder input {
+  margin: 0;
+}
+.parentFolder a {
+  display: block;
+  padding: 4px;
+}
+
+
+/**************************
+ * DOCUMENT LIST
+ **************************/
+.docAlert {
+  /*position:  fixed;*/
+  /*z-index: 100;*/
+  margin: 0;
+  /*right: 20px;*/
+  /*bottom: 20px;*/
+  -webkit-box-shadow: 0 1px 3px #ddd;
+     -moz-box-shadow: 0 1px 3px #ddd;
+          box-shadow: 0 1px 3px #ddd;
+}
+.qq-uploader-extra-dropzones {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+  max-height: 260px;
+  /*overflow: auto;*/
+  line-height: 260px;
+  text-align: center;
+  width: 540px;
+  color: #666;
+  margin: -240px 0 0 -270px;
+  background-color: #f5f5f5;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter:alpha(opacity=9);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.qq-upload-drop-area-active {
+  color: #fff;
+}
+.documentList {
+  float: left;
+  width: 100%;
+  margin: 0 0 12px;
+}
+.documentItem {
+  position: relative;
+  float: left;
+  width: 100%;
+  border: 1px solid transparent;
+  padding: 5px 0;
+  margin: 5px 0;
+  background-color: #fff;
+}
+.documentItem:hover {
+  background-color: #fafafa;
+  border-color: #ddd;
+}
+.documentItem .caret {
+  display: none;
+  position: relative;
+  top: 50%;
+}
+.documentItem.open .caret,
+.documentItem:hover .caret {
+  display: block;
+  z-index: 110;
+}
+.documentItem.open .caret {
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter:alpha(opacity=9);
+}
+.documentItem.open {
+  background-color: #fff;
+  border-color: #ccc;
+  z-index: 150;
+ }
+.documentMenu {
+  position: absolute;
+  z-index: 110;
+  right: 8px;
+  top: 0;
+  height: 100%;
+}
+.documentMenu .dropdown-menu {
+  z-index: 120;
+  left: auto;
+  border-top: 0;
+  border-color: #ccc;
+  display: block;
+  right: -9px;
+  display: none;
+  margin-top: 0;
+  -webkit-border-radius: 0 0 5px 5px;
+     -moz-border-radius: 0 0 5px 5px;
+          border-radius: 0 0 5px 5px;
+}
+.documentMenu .caret {
+  z-index: 110;
+}
+.ie .documentMenu .dropdown-menu {
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.ie7 .documentMenu .dropdown-menu {
+  margin-top: 0;
+}
+.icons-view .documentMenu {
+  display: none;
+}
+.documentSelected, {
+  border-color: #0069D6;
+}
+.documentSelected:hover {
+  border-color: #00438A;
+}
+.documentItem small {
+  display: block;
+  clear: both;
+  font-size: 11px;
+  color: #999;
+}
+
+/* dragging document */
+.documentItem.ui-draggable-dragging {
+  max-width: 200px;
+  float: left;
+}
+.documentItem.ui-draggable-dragging .dragHandle,
+.documentItem.ui-draggable-dragging .documentComments,
+.documentItem.ui-draggable-dragging .documentData,
+.documentItem.ui-draggable-dragging .documentOptions,
+.documentItem.ui-draggable-dragging p,
+.documentItem.ui-draggable-dragging .checker,
+.documentItem.ui-draggable-dragging .documentBookmark {
+  display: none;
+}
+.documentItem .dragHandle,
+.clipboard .dragHandle{
+  display: none;
+  background: url(/images/icons/draggable.png) #f1f1f1 no-repeat center;
+  width: 18px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 1px;
+  cursor: move;
+  transition: opacity.2s linear, border .2s linear;
+  opacity: .4;
+  border-left: 1px solid transparent;
+  -webkit-transition: opacity .2s linear, border .2s linear;
+     -moz-transition: opacity .2s linear, border .2s linear;
+      -ms-transition: opacity .2s linear, border .2s linear;
+       -o-transition: opacity .2s linear, border .2s linear;
+
+}
+.documentItem:hover .dragHandle,
+.clipboard li:hover .dragHandle {
+  opacity: 1;
+  border-left: 1px solid #ccc;
+}
+.documentItem .documentDetails {
+  margin: 0 0 0 5px;
+}
+.documentItem .documentLink img {
+  width: 16px;
+}
+.documentItem ul.documentData {
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 10px;
+  color: #333;
+  list-style: none;
+}
+.documentItem .documentData li {
+  float: left;
+  margin: 0 20px 0 5px;
+}
+.documentItem .documentData span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* VIEW: hide elements in minimal list and icon view */
+.documentList .min-list-view small,
+.documentList .min-list-view .documentData,
+.documentList .min-list-view .documentComments,
+.documentList .icons-view small,
+.documentList .icons-view .documentData,
+.documentList .icons-view .documentBookmark,
+.documentList .icons-view .documentComments,
+.documentList .icons-view .dragHandle {
+  display: none;
+}
+
+/* VIEW: minimal list */
+.documentList .min-list-view .documentItem {
+  padding: 3px 0;
+  margin: 1px 0;
+}
+
+/* VIEW: icon */
+.documentList .icons-view img {
+  width: 64px;
+  float: none;
+}
+.documentList .icons-view [class^="cla-icon-"] {
+  background-image: url(/images/icons/iconset_large.png);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: block;
+  height: 48px;
+  width: 48px;
+}
+.documentList .icons-view .cla-icon-doc-access {
+  background-position: -192px 0;
+}
+.documentList .icons-view .cla-icon-doc-excel-csv {
+  background-position: -288px -48px;
+}
+.documentList .icons-view .cla-icon-doc-excel-table {
+  background-position: -336px -48px;
+}
+.documentList .icons-view .cla-icon-doc-film {
+  background-position: -288px 0;
+}
+.documentList .icons-view .cla-icon-doc-google {
+  background-position: -625px 0;
+}
+.documentList .icons-view .cla-icon-doc-illustrator {
+  background-position: -384px 0;
+}
+.documentList .icons-view .cla-icon-doc-music {
+  background-position: 0 -48px;
+}
+.documentList .icons-view .cla-icon-doc-office {
+  background-position: 0 0;
+}
+.documentList .icons-view .cla-icon-doc-pdf {
+  background-position: -144px -48px;
+}
+.documentList .icons-view .cla-icon-doc-photoshop {
+  background-position: -336px 0;
+}
+.documentList .icons-view .cla-icon-doc-text-image {
+  background-position: -96px -48px;
+}
+.documentList .icons-view .cla-icon-email {
+  background-position: -576px -48px;
+}
+.documentList .icons-view .cla-icon-feed-document {
+  background-position: -480px 0;
+}
+.documentList .icons-view .cla-icon-folder {
+  background-position: -96px 0;
+}
+.documentList .icons-view .cla-icon-gdoc-link {
+  background-position: -673px 0;
+}
+.documentList .icons-view .cla-icon-image1 {
+  background-position: -144px 0;
+}
+.documentList .icons-view .cla-icon-marker {
+  background-position: -674px -48px;
+}
+.documentList .icons-view .cla-icon-page {
+  background-position: -624px -48px;
+}
+.documentList .icons-view .cla-icon-page-code {
+  background-position: -384px -48px;
+}
+.documentList .icons-view .cla-icon-page-white-database {
+  background-position: -432px -48px;
+}
+.documentList .icons-view .cla-icon-page-white-flash {
+  background-position: -432px 0;
+}
+.documentList .icons-view .cla-icon-page-white-php {
+  background-position: -48px -48px;
+}
+.documentList .icons-view .cla-icon-page-white-powerpoint {
+  background-position: -48px 0;
+}
+.documentList .icons-view .cla-icon-page-white-text {
+  background-position: -240px -48px;
+}
+.documentList .icons-view .cla-icon-page-white-wrench {
+  background-position: -528px -48px;
+}
+.documentList .icons-view .cla-icon-page-white-zip {
+  background-position: -192px -48px;
+}
+.documentList .icons-view .documentItem {
+  border-color: transparent;
+  background-color: transparent;
+}
+.documentList .icons-view .documentItem {
+  float: left;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  margin: 10px 10px 0 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+.documentList .icons-view img,
+.documentList .icons-view .documentLink {
+  display: block;
+  margin: 0 auto;
+}
+ /**************************
+ * CLIPBOARD
+ **************************/
+.no-user-select {
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+/*
+  container used to drag multiple items from clipboard
+*/
+.draggingContainer {
+  min-width: 160px;
+}
+.draggingContainer li {
+  background: none;
+}
+.draggingContainer .dragHandle,
+.draggingContainer .checker {
+  display: none;
+}
+
+
+
+/**************************
+* ADD DOCUMENT FULL
+ **************************/
+.record_types .well {
+  padding: 6px 9px 9px;
+}
+
+/**************************
+* VIEW DOCUMENT
+ **************************/
+/**************************
+* PARENT FOLDER
+ **************************/
+.documentPreview .parentFolder {
+  border: 0;
+  margin-top: 8px;
+  background: transparent;
+}
+.documentPreview .parentFolder a {
+  display: inline;
+}
+
+
+/**************************
+* PREVIEW PANEL
+ **************************/
+.previewPanel {
+  float: left;
+  width: 100%;
+  margin: 0 0 18px;
+}
+
+
+/**************************
+* DOCUMENT DETAILS
+ **************************/
+.docTitleContainer {
+  float: left;
+  width: 100%;
+}
+
+.docTitleContainer h4 {
+  line-height: 24px;
+  margin: 10px 0;
+
+}
+ .preview_frame {
+  margin: 0 0 10px;
+ }
+.avatar {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.viewed-by li { margin: 0 10px 0 0; float: left; width: 34px; height: 34px; }
+.viewed-by a { display: block; margin: 0; }
+.viewed-by .avatar { float: none; margin: 0;
+  width: 30px;
+}
+
+.comment-body p { margin-left: 50px; }
+.comment dl { font-size: 11px; margin: 0 0 0 50px; }
+.comment dt {
+  float: left;
+}
+.comment dd {
+  float: left;
+  margin-right: 20px;
+}
+
+.audit-filter input { margin: 0; }
+
+/**************************
+* USER COMMENTS
+ **************************/
+.all-comments {
+  max-height: 448px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  padding: 8px;
+  background: #f8f8f8;
+  -webkit-box-shadow: inset 1px 1px 8px #ccc;
+     -moz-box-shadow: inset 1px 1px 8px #ccc;
+          box-shadow: inset 1px 1px 8px #ccc;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.comment {
+  border: 1px solid #ddd;
+  padding: 10px 10px 4px;
+  background: #fefefe;
+  -webkit-box-shadow: 0 1px 3px #eee;
+     -moz-box-shadow: 0 1px 3px #eee;
+          box-shadow: 0 1px 3px #eee;
+}
+.comment + .comment {
+  margin-top: 10px;
+}
+.comment img {
+  float: left;
+}
+.user-comment {
+  margin-left: 40px;
+}
+.user-comment .profile {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+  font-size: 11px;
+}

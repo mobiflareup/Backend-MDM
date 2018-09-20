@@ -1,0 +1,894 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="MobiOcean.MDM.Web.MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MobiOcean</title>
+    <!-- Bootstrap -->
+    <link rel="icon" href="image/mmlogo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/allpage.min.css" />
+    <link href="Content/vendors/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.datepick.min.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"  />--%>
+    <!-- Font Awesome -->
+    <link href="Content/vendors/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/custom.min.css" rel="stylesheet" />
+    <%--<link type="text/css" href="css/custom.css" rel="stylesheet" />--%>
+    <link href="css/responsive.min.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" type="text/css" href="css/responsive.css" />--%>
+    <link href="Content/css/custom.min.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <%--<link href="Content/css/custom.css" rel="stylesheet" />--%>
+    <!-- jQuery -->
+    <script src="Content/vendors/js/jquery.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        
+    </style>
+</head>
+<body class="nav-md">
+    <form runat="server">
+        <asp:ScriptManager ID="sc" runat="server"></asp:ScriptManager>
+        <asp:HiddenField ID="hiddenclientapi" runat="server" />
+
+        <% if (hiddenclientapi.Value.ToString() == "GOOGLE")
+            { %>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1mre7vCLF2JZM2qqfe5zmUPmjDliVs7s&libraries=places&sensor=false"></script>
+        <%-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1mre7vCLF2JZM2qqfe5zmUPmjDliVs7s&sensor=false"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBhbtcproq7ZpDQKi6k_q2J7IBYJuFt3w&libraries=places"></script>--%>
+        <script src="Content/js/googlemaps/gingerboxGoogleMaps.js"></script>
+
+        <% }
+            else /*if (hiddenclientapi.Value.ToString() == "OTHER")*/
+            {%>
+        <script src="<%= (hiddenclientapi.Value.ToString()) %>"></script>
+        <%--https://apis.mapmyindia.com/advancedmaps/v1/uqhb9z2wkd8kma8brt1mnq16ozy3sydm/map_load?v0.1--%>
+        <script src="Content/js/mapmyindia/Leaflet.Editable.js"></script>
+        <script src="Content/js/mapmyindia/Path.Drag.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="Stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="Stylesheet" type="text/css" />
+        <link href="Content/js/mapmyindia/css/gingerboxMapMyIndia.css" rel="stylesheet" />
+        <script src="Content/js/mapmyindia/gingerboxMapMyIndia.js"></script>
+        <% } %>
+        <asp:HiddenField ID="countMapsApi" runat="server" />
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="#" class="site_title text-center"><span>
+                                <img src="image/logo.png" width="150" height="40" /></span><span class="logo-circle" style="display: none;"><img src="image/mmlogo.jpg" width="50" height="50" /></span>
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <input type="hidden" id="ClientIdApi" value="<%= (Session["ClientId"].ToString()) %>" />
+                            <input type="hidden" id="UserIdApi" value="<%= (Session["UserId"].ToString()) %>" />
+                            <div class="menu_section">
+                                <ul class="nav side-menu">
+                                    <%if (Session["helpRoleId"] != null && (int)(Session["helpRoleId"]) <= 3)
+                                        {%>
+                                    <li>
+                                        <a href="BacktoAdmin" class="text-center">
+                                            <h4 class="glyphicon glyphicon-hand-left"></h4>
+                                            &nbsp;<span class="list hidden-sm hidden-xs">Go Back Admin-DashBoard</span>
+                                        </a>
+                                    </li>
+                                    <%} %>
+
+                                    <%if ((Session["RoleId"] != null && Session["helpRoleId"] == null && (int)(Session["RoleId"]) == 1) || ((Session["RoleId"] == null && Session["helpRoleId"] == null && ((int)(Session["Role"])) == 1)))
+                                        { %>
+
+                                    <li class="Active">
+                                        <a href="SADashBoard" class="text-center"><i class="fa fa-dashboard custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Dashboard</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-user custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Client/ User</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li>
+                                                <a href="ClientMaster">Client</a>
+                                            </li>
+                                            <li>
+                                                <a href="UserMaster">User</a>
+                                            </li>
+                                            <li>
+                                                <a href="SADashBoard1">All User </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-line-chart custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Manage</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="AppGroup">Application Group</a></li>
+                                            <li><a href="WebCategories">Web Category</a></li>
+                                            <li><a href="Affiliate">Affiliate</a></li>
+                                            <li><a href="PartnerDetails">Partner</a></li>
+                                            <li><a href="NewsSubscription">News Subscription</a></li>
+                                            <li><a href="DemoProduct">Demo Product</a></li>
+                                            <li><a href="ContactSales">Contact Sale</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-list custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Report </span><span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu custom-report-menu">
+                                            <li><a href="RemarkMobileSIM">Mobile/Sim Status Report</a></li>
+                                            <li><a href="RemarkGPS">GPS Status Report</a></li>
+                                            <li><a href="RemarkInternetConnectivity">Internet Status Report</a></li>
+                                            <li><a href="RemarkAirplaneMode">Flight Mode Report</a></li>
+
+                                        </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-archive custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Terminal Management</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="ApplicationMarketList">APP Store</a></li>
+                                            <li><a href="ApplicationManageOTG">OS Upgrade</a></li>
+                                            <li><a href="AppTerminalMGM">Terminal List</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="APKUpload" class="text-center"><i class="fa fa-archive custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">APK Upload</span></a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href="FileUpload" class="text-center">
+                                            <img src="image/database.png" height="40px" width="40px" />
+                                            <%--<i class="fa fa-upload custom-menu-fa"></i>--%>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Secure Storage</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="ContactUs" class="text-center"><i class="fa fa-contao custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Contact Us</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="SupportMaster" class="text-center"><i class="fa fa-phone custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Support </span></a>
+                                    </li>
+
+                                    <%}
+                                        else if ((Session["RoleId"] != null && (int)(Session["RoleId"]) == 2 && Session["helpRoleId"] == null) || (Session["RoleId"] == null && Session["helpRoleId"] == null && ((int)(Session["Role"]) == 2 || (int)(Session["Role"]) == 3)))
+                                        { %>
+
+                                    <li class="Active">
+                                        <a href="AdminDashBoard" class="text-center"><i class="fa fa-dashboard custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Dashboard</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-pencil custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Enrollment</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li>
+                                                <a href="Branch">Branch</a>
+
+                                            </li>
+                                            <li>
+                                                <a href="Department">Department</a>
+                                            </li>
+                                            <li>
+                                                <a href="AddUser">Add User</a>
+                                            </li>
+                                            <li>
+                                                <a href="AddCustomer">Add Customer</a>
+                                            </li>
+                                            <li>
+                                                <a href="Sensor">Wi-Fi Sensor</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-line-chart custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Manage</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="Manage">Manage & View </a></li>
+                                            <li><a href="utrigger">Trigger</a></li>
+
+                                            <li><a href="EmpConveyance">Manage Conveyance </a></li>
+
+                                            <li><a href="ManageCustomer">Assign Customer </a></li>
+                                            <li><a href="ModeOfTravel">Manage Travel Mode </a></li>
+                                            <li><a href="ApproveCustomer">Approve Customer </a></li>
+
+                                            <% if (Convert.ToInt32(Session["ClientId"].ToString()) == 208 || Convert.ToInt32(Session["ClientId"].ToString()) == 264)
+                                                {%>
+                                            <li><a href="SosCamera">Camera Info</a></li>
+                                            <% if (Convert.ToInt32(Session["ClientId"].ToString()) == 208)
+                                                {%>
+                                            <li><a href="OrderDetail">Manage Order</a></li>
+                                            <li><a href="CategoryList.aspx">Category User Mapping </a></li>
+                                            <% }
+                                                }
+                                            %>
+                                        </ul>
+
+                                    </li>
+
+
+                                    <li>
+                                        <a href="LTCollegeVisit" class="text-center"><i class="fa fa-list custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">
+                                                <% if (Convert.ToInt32(Session["ClientId"].ToString()) == 399)
+                                                    {%>
+                                                College Visit Report
+                                                 <% }
+                                                     else
+                                                     {%>
+                                                Customer Visit Report
+                                                <%} %>
+                                            </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="profilemaster" class="text-center"><i class="fa fa-file custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Profile / Policy</span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-bus custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">MobiMove</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="MobiMoveSchool" target="_blank">School</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="PWCcommuniction" class="text-center"><i class="fa fa-envelope custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name" style="padding-left: 9px !important;">Secure Communication</span></a>
+                                    </li>
+                                       <li>
+                                        <a href="EkycGrid" class="text-center"><i class="fa fa-users custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name" style="padding-left: 9px !important;">EKYC</span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-list-alt custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name" style="padding-left: 9px !important;">Attendance & Conveyance</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="attendanceReport">Attendance Report </a></li>
+
+                                            <li><a href="ConveyanceReport">Conveyance Report </a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-road custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Travel Allowance</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="TAMaster">TA Report </a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-user custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Master Console</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li class="dropdown-submenu"><a href="javascript:;">App Management<span class="fa fa-chevron-right"></span></a>
+                                                <ul class="dropdown-menu nav child_menu custom-child-menu" style="height: auto">
+                                                    <li><a href="AppGroup">App Group Management</a></li>
+                                                    <li><a href="AppMaster">App Master</a></li>
+                                                </ul>
+
+                                            </li>
+                                            <li class="dropdown-submenu"><a href="javascript:;">Web Management for
+                                                <br />
+                                                Individual<span class="fa fa-chevron-right"></span></a>
+                                                <ul class="dropdown-menu nav child_menu custom-child-menu" style="height: auto">
+                                                    <li><a href="WebCategory">Web Category Management</a></li>
+                                                    <li><a href="AddBlackList">Restricted Websites</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li><a href="AddWebsites">Web Management for Organization</a></li>
+                                            <li class="dropdown-submenu"><a href="javascript:;">CALL / SMS Regulation<span class="fa fa-chevron-right"></span></a>
+                                                <ul class="dropdown-menu nav child_menu custom-child-menu" style="height: auto">
+
+                                                    <li><a href="AlertManagement">Alert Management</a></li>
+                                                    <li><a href="KeyWordMgmt">Keyword Management</a></li>
+                                                </ul>
+
+
+                                            </li>
+                                            <li><a href="AddMobile">SOS Management</a>
+                                            </li>
+                                            <li><a href="RemarkExt">Remark Master</a>
+                                            </li>
+
+                                            <li class="dropdown-submenu"><a href="javascript:;">Geo-Fence Management<span class="fa fa-chevron-right"></span></a>
+                                                <ul class=" dropdown-menu nav child_menu custom-child-menu" style="height: auto">
+                                                    <li><a href="GeoFenceManagement">Route Management</a></li>
+                                                    <li><a href="Area">Area Management</a></li>
+                                                </ul>
+
+
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-archive custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Terminal Management</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="ApplicationMarketList">APP Store</a></li>
+                                            <li><a href="ApplicationManageOTG">OS Upgrade</a></li>
+                                            <li><a href="AppTerminalMGM">Terminal List</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="FileUpload" class="text-center">
+                                            <img src="image/database.png" height="40px" width="40px" />
+                                            <%--<i class="fa fa-upload custom-menu-fa"></i>--%>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Secure Storage</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-list custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Report </span><span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu custom-report-menu">
+                                            <li><a href="UserReport">User Report</a></li>
+                                            <li><a href="BranchReport">Branch Report</a></li>
+                                            <li><a href="DeptReport">Department Report</a></li>
+                                            <li><a href="ProfileDetails">Profile Report</a></li>
+                                            <li><a href="UserLocationList">Location Report</a></li>
+                                            <li><a href="UserGeoFenceLocationList">Geo-Fence Report</a></li>
+                                            <li><a href="reportsms">Message Logs</a></li>
+                                            <li><a href="reportcall">Call Logs</a></li>
+                                            <li><a href="Websitelogs">Website Logs</a></li>
+                                            <li><a href="AppLogsdetail">Application Logs</a></li>
+                                            <li><a href="SensorDetails">Sensor Details</a></li>
+                                            <li><a href="Trigger">Remote Trigger Report</a></li>
+                                            <li><a href="Alert">Transgression Report </a></li>
+                                            <li><a href="FileDtl">SOS Files</a></li>
+                                            <li><a href="SosReport">SOS Report</a></li>
+                                            <li><a href="Updatedtl">Profile Update Detail</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="SupportForm" class="text-center"><i class="fa fa-phone custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Support </span></a>
+                                    </li>
+
+                                    <%}
+                                        else
+                                        { %>
+                                    <li>
+                                        <a href="UserProfile" class=" text-center">
+                                            <asp:Image ID="Image1" runat="server" class="img-circle custom-user-img" Width="50" Height="50" />
+                                            <br />
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">
+                                                <asp:Label ID="lblUsName" runat="server" class="list hidden-sm hidden-xs"></asp:Label><br />
+                                                &nbsp;<asp:Label ID="lblPrfName" runat="server" class="list hidden-sm hidden-xs"></asp:Label></span>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="Active">
+                                        <a href="userdashboard" class="text-center"><i class="fa fa-user custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Overview</span> </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="LTCollegeVisit" class="text-center"><i class="fa fa-list custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">
+                                                <% if (Convert.ToInt32(Session["ClientId"].ToString()) == 399)
+                                                    {%>
+                                                College Visit Report
+                                                 <% }
+                                                     else
+                                                     {%>
+                                                Customer Visit Report
+                                                <%} %>
+                                            </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-line-chart custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Manage</span> <span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu">
+                                            <li><a href="Deviceinfo">Preference</a></li>
+                                            <li class="dropdown-submenu"><a href="javascript:;">Address Book<span class="fa fa-chevron-right"></span></a>
+                                                <ul class="dropdown-menu nav child_menu custom-child-menu" style="height: auto">
+                                                    <li><a href="Regular">Regular</a></li>
+                                                    <li><a href="BlackList">Black List</a></li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="CalendarList">Calender List </a></li>
+
+                                            <li><a href="ApplicationList">Application List</a></li>
+                                            <li><a href="SosContact">SOS Contact </a></li>
+                                            <li><a href="UserSmsLog">SMS Backup List </a></li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;" class="text-center"><i class="fa fa-list custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name">Report </span><span class="fa fa-chevron-right"></span></a>
+                                        <ul class="nav child_menu custom-child-menu custom-report-menu">
+                                            <li><a href="TAMaster">TA Report </a></li>
+                                            <li><a href="attendanceReport">Attendance Report </a></li>
+                                            <li><a href="ConveyanceReport">Conveyance Report </a></li>
+                                            <li><a href="ProfileDetails">Profile Report</a></li>
+                                            <li><a href="UserLocationList">Location Report</a></li>
+                                            <li><a href="UserGeoFenceLocationList">Geo-Fence Report</a></li>
+                                            <li><a href="reportsms">Message Logs</a></li>
+                                            <li><a href="reportcall">Call Logs</a></li>
+                                            <li><a href="Websitelogs">Website Logs</a></li>
+                                            <li><a href="AppLogsdetail">Application Logs</a></li>
+                                            <li><a href="Trigger">Remote Trigger Report</a></li>
+                                            <li><a href="Alert">Transgression Report </a></li>
+                                            <li><a href="FileDtl">SOS Files</a></li>
+                                            <li><a href="SosReport">Sos Report</a></li>
+                                            <li><a href="Updatedtl">Profile Update Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="utrigger" class="text-center"><i class="fa fa-mobile custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Triggers</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="SetAlert" class="text-center"><i class="fa fa-bell custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Set Alerts</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="SupportForm" class="text-center"><i class="fa fa-phone custom-menu-fa"></i>
+                                            <br />
+                                            <span class="custom-menu-name custom-menu-single">Support </span></a>
+                                    </li>
+                                    <%} %>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /sidebar menu -->
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu navbar-fixed-top">
+                        <nav class="" role="navigation">
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+
+                            </div>
+                            <!-- <p class="text-center custom-welcome-user hidden-md hidden-sm hidden-lg">Welcome User</p>-->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span class="cusrom-username-sm"><%=(Session["UserName"].ToString())%></span>
+                                        <span class=" fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+
+                                        <li>
+                                            <a href="clientprofile"><i class="fa fa-user pull-right"></i>Company Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="setting"><i class="fa fa-cog pull-right"></i>Setting & Configuration</a>
+                                        </li>
+                                        <li>
+                                            <a href="LogOut"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="compony-logo">
+                                        <asp:ImageButton ID="header_imageButton" class="img-responsive" AlternateText="Add logo" OnClick="header_imageButton_Click" ToolTip="Change Logo" Style="max-width: 150px; max-height: 32px" runat="server" />
+                                    </a>
+                                </li>
+                                <%if (Convert.ToInt32(Session["Role"].ToString()) != 4)
+                                    { %>
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-flag-o"></i>
+                                        <span class="badge bg-green">
+                                            <asp:Label ID="lblExpiry" runat="server"></asp:Label></span>
+                                    </a>
+
+                                    <ul id="menu1" class="dropdown-menu  list-unstyled msg_list" role="menu">
+                                        <asp:ListView ID="expireday" runat="server" ItemPlaceholderID="ItemPlaceHolder">
+                                            <LayoutTemplate>
+
+                                                <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+
+                                            </LayoutTemplate>
+                                            <ItemTemplate>
+                                                <li>
+                                                    <a>
+                                                        <span>
+                                                            <a href="Setting?id=1" class="Expiry message text-center">No of Licence(S) : <%#Eval("NoOfEmployees") %>
+                                                                <br />
+                                                                Time Period(In Month) : <%#Eval("Duration") %>
+                                                                <br />
+                                                                Remaining Days : <%#Eval("RemainingTimePeriod")%>    
+                                                            </a>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                            </ItemTemplate>
+                                            <EmptyItemTemplate>
+                                                <li>
+                                                    <span>No Alert!</span>
+                                                </li>
+                                            </EmptyItemTemplate>
+                                        </asp:ListView>
+
+                                    </ul>
+                                </li>
+                                <%} %>
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-bell-o"></i>
+                                        <span class="badge bg-green">
+                                            <asp:Label ID="lblNotification1" runat="server"></asp:Label></span>
+                                    </a>
+
+                                    <ul id="menu2" class="dropdown-menu " role="menu" style="width: ;">
+                                        <li>
+                                            <ul class="custom-msg-menu list-unstyled msg_list  scrollbar-macosx">
+                                                <asp:ListView ID="NotificationList" runat="server" ItemPlaceholderID="ItemPlaceHolder">
+                                                    <LayoutTemplate>
+
+                                                        <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+
+                                                    </LayoutTemplate>
+                                                    <ItemTemplate>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <span>
+                                                                    <span><%#Eval("UserName") %></span>
+                                                                    <span class=" pull-right"><%#Eval("LogDateTime") %> </span>
+                                                                </span>
+                                                                <span class="message"><%#Eval("AlertText") %></span>
+                                                            </a>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                    <EmptyItemTemplate>
+                                                        <li><span>No Alert!</span>
+                                                        </li>
+                                                    </EmptyItemTemplate>
+                                                </asp:ListView>
+                                            </ul>
+                                        </li>
+
+                                        <li class="custom-bell-msg">
+                                            <div class="text-center" style="padding: 15px;">
+                                                <div class="col-lg-6">
+                                                    <a href="Alert">
+                                                        <strong>See All Alerts</strong>
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="lnkMarkRead_Click">Delete All<i class="fa fa-angle-right"></i></asp:LinkButton>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span class="badge bg-green">
+                                            <asp:Label ID="lblNotifi" runat="server"></asp:Label></span>
+                                    </a>
+
+                                    <ul id="menu3" class="dropdown-menu" role="menu">
+                                        <li>
+                                            <ul class="custom-msg-menu list-unstyled msg_list  scrollbar-macosx">
+
+                                                <asp:ListView ID="NotifiLV" runat="server" ItemPlaceholderID="ItemPlaceHolder">
+                                                    <LayoutTemplate>
+                                                        <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+                                                    </LayoutTemplate>
+                                                    <ItemTemplate>
+                                                        <li>
+                                                            <a>
+                                                                <span>
+                                                                    <span><%#Eval("UserName") %></span>
+                                                                    <span class=" pull-right"><%#Eval("CreationDate") %></span>
+                                                                </span>
+                                                                <span class="message"><%#Eval("Notification") %> </span>
+                                                            </a>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                    <EmptyItemTemplate>
+                                                        <li>
+                                                            <span>No Notification!</span>
+                                                        </li>
+                                                    </EmptyItemTemplate>
+                                                </asp:ListView>
+                                            </ul>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <%if (Convert.ToInt32(Session["UserId"].ToString()) == 1)//Convert.ToInt32(Session["Role"].ToString()) == 1)
+                                        {%>
+                                   
+                                        By Client :
+                                   <asp:DropDownList ID="dtClientId" Width="250px" runat="server" CssClass="form-control" AppendDataBoundItems="true" Style="color: black;" OnSelectedIndexChanged="dtClientId_SelectedIndexChanged" AutoPostBack="true">
+                                   </asp:DropDownList>
+
+                                    <%} %>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- /top navigation -->
+                <div class="right_col custom-right-col" role="main">
+                    <br />
+                    <br />
+                    <br />
+                    <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <asp:Button ID="dummy_BtnAsgnGpheader" runat="server" Style="display: none;" />
+                    <asp:ModalPopupExtender ID="mpheader" runat="server" PopupControlID="headermyModal"
+                        PopupDragHandleControlID="dragi" TargetControlID="dummy_BtnAsgnGpheader" CancelControlID="btnCloseheader"
+                        BackgroundCssClass="modalbackground">
+                    </asp:ModalPopupExtender>
+                    <asp:Panel runat="server" ID="headermyModal" TabIndex="-1" role="dialog" aria-labelledby="myModalLabel" Style="display: none" aria-hidden="true" class="col-md-12 col-sm-12 col-xs-12 modal-dialog">
+                        <div class="col-md-12 col-sm-12 col-xs-12 modal-content" style="text-align: center">
+                            <div class="modal-header" id="dragi">
+                                <div class="col-lg-9">
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        <asp:Label runat="server" Text="CHANGE COMPANY LOGO" Font-Bold="true" ID="lblFeatureN"></asp:Label>
+                                    </h4>
+                                </div>
+                                <div class="col-lg-3" style="text-align: right">
+                                    <asp:Button ID="btnCloseheader" runat="server" CssClass="close btn btnd btncompt" Text="x" Style="margin: -5px -18px;" />
+                                </div>
+                            </div>
+                            <div class="modal-header">
+                                <asp:Label ID="lblheadernotification" runat="server"></asp:Label>
+
+                            </div>
+                            <div class="modal-body">
+                                <div class="row" style="height: 150px; overflow: auto">
+
+                                    <div class="form-group ">
+                                        <label for="lblEId" class="control-label col-lg-4" style="float: left;">Choose File* : </label>
+                                        <div class="col-lg-8">
+                                            <asp:FileUpload ID="FileUpload1header" runat="server" CssClass="btn btnd btncompt waves-effect waves-light" />
+                                        </div>
+                                        <div class="form-group ">
+
+                                            <div class="col-lg-10">
+                                                <br />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-lg-12">
+                                                <asp:Button runat="server" ID="btnuploadheader" Text="Upload" CssClass="btn btnd btncompt waves-effect waves-light" Width="110px" OnClick="btnuploadheader_Click" ValidationGroup="upload" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+                </div>
+
+                <!-- footer content -->
+                <footer>
+                    <div class="">
+                        <p>
+                            <span>&copy; <%=DateTime.Now.Year%> by <a href="<%=MobiOcean.MDM.BAL.Model.Constant.MobiURL %>" target="_blank">MobiOcean</a></span>
+                            <a href="javascript:;" title="UP" class="pull-right up-arrow"><i class="fa fa-arrow-up"></i></a>
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+    </form>
+
+    <!-- Bootstrap -->
+    <script src="Content/vendors/js/bootstrap.min.js"></script>
+    <script src="Content/vendors/js/bootstrap-progressbar.min.js"></script>
+    <script src="Content/js/moment/moment.min.js"></script>
+    <%-- <script src="js/jquery.plugin.js" type="text/javascript"></script>--%>
+    <script src="js/jquery.plugin.min.js"></script>
+    <%--<script src="js/jquery.datepick.js" type="text/javascript"></script>--%>
+    <script src="js/jquery.datepick.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="Content/vendors/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <%--<script src="Content/js/custom.js"></script>--%>
+    <script src="Content/js/custom.min.js"></script>
+    <script type="text/javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+        $(document).keypress(
+            function (event) {
+                if (event.which == '13') {
+                    event.preventDefault();
+                }
+
+
+            });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            //Click event to scroll to top
+            $(".up-arrow").click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            //End Click event to scroll to top 
+            $('.multi-field-wrapper').each(function () {
+                var $wrapper = $('.multi-fields', this);
+                $(".add-field", $(this)).click(function (e) {
+                    $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+                });
+                $('.multi-field .remove-field', $wrapper).click(function () {
+                    if ($('.multi-field', $wrapper).length > 1)
+                        $(this).parent('.multi-field').remove();
+                });
+            });
+
+            var navListItems = $('ul.setup-panel li a'),
+                allWells = $('.setup-content');
+
+            allWells.hide();
+
+            navListItems.click(function (e) {
+                e.preventDefault();
+                var $target = $($(this).attr('href')),
+                    $item = $(this).closest('li');
+
+                if (!$item.hasClass('disabled')) {
+                    navListItems.closest('li').removeClass('active');
+                    $item.addClass('active');
+                    allWells.hide();
+                    $target.show();
+                }
+            });
+
+            $('ul.setup-panel li.active a').trigger('click');
+
+            // DEMO ONLY //
+            $('#activate-step-2').on('click', function (e) {
+                $('ul.setup-panel li:eq(1)').removeClass('disabled');
+                $('ul.setup-panel li a[href="#step-2"]').trigger('click');
+                $(this).remove();
+            })
+            // DEMO ONLY //
+            $('#activate-step-3').on('click', function (e) {
+                $('ul.setup-panel li:eq(2)').removeClass('disabled');
+                $('ul.setup-panel li a[href="#step-3"]').trigger('click');
+                $(this).remove();
+            })
+
+
+
+
+            $(".btn").on("click", function () {
+                $(".alert").removeClass("in").show();
+                $(".alert").delay(3000).addClass("in").fadeOut(2000);
+            });
+
+
+
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+
+            $(function () {
+                $(":checkbox").change(function () {
+                    var arr = $(":checkbox:checked").map(function () { return $(this).next().html(); }).get();
+                    $("#myDiv").html(arr);
+                });
+            });
+
+            function ToggleBGColour(item) {
+                var td = $(item).parent();
+                if (td.is('.rowSelected'))
+                    td.removeClass("rowSelected");
+                else
+                    td.addClass("rowSelected");
+            }
+
+
+        });
+
+    </script>
+</body>
+</html>
+

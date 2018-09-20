@@ -1,0 +1,123 @@
+/*added by Ricardo Campos*/
+.navbar-search {
+	width: 350px;
+}
+.select_search {
+	width: 120px;
+}
+.headbar h1 {
+	float: left;
+	margin-left: 0;
+}
+.headbar h1 a {
+	background: url(/interface_testdrive/images/logo.png) no-repeat;
+	height: 90px;
+	width: 100px;
+}
+.page_box .headbar {
+	padding: 0;
+	height:90px;
+}
+
+
+/* Typekit styling  added by MC */
+
+h1, h2 {
+    font-family: "museo-sans",sans-serif; /* looks ok for big sizes */
+    /*font-family: sans-serif;*/
+    font-weight: 700;
+}
+h3, h4, h5, h6 {
+   
+}
+
+
+
+
+.infobox {
+	border: 1px solid rgb(204, 204, 204);
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+	margin-top: 10px;
+
+
+}
+.infobox h3 {
+	padding: 0 5px;
+	background: rgb(247, 247, 247);
+	background: -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(216, 216, 216, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247, 247, 247, 1)), color-stop(100%,rgba(216, 216, 216, 1)));
+	background: -webkit-linear-gradient(top, rgba(247, 247, 247, 1) 0%,rgba(216, 216, 216, 1) 100%);
+	background: -o-linear-gradient(top, rgba(247, 247, 247, 1) 0%,rgba(216, 216, 216, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(247, 247, 247, 1) 0%,rgba(216, 216, 216, 1) 100%);
+	background: linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%,rgba(216, 216, 216, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#d8d8d8',GradientType=0 );
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+#myCarousel{
+	border:4px solid #ccc;
+	border-radius: 4px;
+}
+.fa {
+	margin: 0;
+	min-height: 100px;
+	margin-bottom: 15px;
+}
+.fa.well {
+	padding: 15px 10px;
+}
+
+/*fa ie*/
+
+.ie .fa li {
+	margin-right:15px;
+}
+.ie7 .fa li, .ie8 .fa li {
+	margin-right:12px;
+}
+/*.ie7 .fa li a{
+	height: 0;
+}
+*/
+
+.fa li{
+	list-style: none;
+	border: 1px solid black;
+	float: left;
+	padding: 3px;
+	margin-right: 17px;
+	background: white;
+	border-radius: 50px;
+}
+.fa li:last-child{
+	margin-right: 0;
+}
+.fa li a{
+	float: left;
+	padding: 45px;
+	background:#00adef;
+	border-radius: 50px;
+}
+.fa li:last-child{
+	margin-right: 0;
+}
+.fa .fa1 a{
+	background: url(/interface_testdrive/images/fa.png) no-repeat 6px 14px;
+	background-color: #00adef;
+}
+.fa .fa2 a{
+	background: url(/interface_testdrive/images/fa.png) no-repeat -109px 14px;
+	background-color: #00adef;
+}
+.fa .fa3 a{
+	background: url(/interface_testdrive/images/fa.png) no-repeat -223px 14px;
+	background-color: #00adef;
+}
+
+.wrapperReview ul li label.alert{
+	width: 100%;
+}

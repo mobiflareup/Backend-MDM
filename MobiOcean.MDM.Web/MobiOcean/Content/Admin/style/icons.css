@@ -1,0 +1,2367 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**************************
+ * UI BADGES
+ **************************/
+.cla-badge {
+	position: absolute;
+	z-index: 1001;
+	right: 3px;
+	bottom: -3px;
+	font-size: 9px;
+	background: #600;
+	background: rgba(153, 0, 0, 0.6);
+	color: #fff;
+	padding-top: 2px;
+	width: 16px;
+	line-height: 14px;
+	text-align: center;
+	display: block;
+	text-shadow: none;
+	-webkit-border-radius: 10em;
+	   -moz-border-radius: 10em;
+	        border-radius: 10em;
+	-webkit-transition: background .2s linear;
+	   -moz-transition: background .2s linear;
+	     -o-transition: background .2s linear;
+	        transition: background .2s linear;
+}
+.trashcan .cla-badge {
+	
+	background: #ccc;
+	background: rgba(102,102,102,0.6);
+}
+/**************************
+ * ICONS
+ **************************/
+[class^="cla-icon-"]{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  background-image:url(iconset.png);
+  background-repeat: no-repeat;
+  *margin-right: .3em;
+}
+.trashicon{
+  background-image:url(iconset.png);
+  background-repeat: no-repeat;
+  background-position:-520px 0;
+  /*float: right;*/
+  width: 16px;
+  height: 16px;
+  text-align:center; 
+  cursor:pointer;
+ /* margin-left:10px;*/
+}
+[class^="cla-icon-"]:last-child {
+  *margin-left: 0;
+}
+/* icons without text */
+.icon-only {
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	display: inline-block;
+	background-image: none;
+}
+/* disabled icons */
+.cla-icon-disabled {
+	background: none;
+	width: auto;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	cursor: default;
+}
+/* iconset */
+.cla-icon-accept {
+	background-position: -660px -260px;
+}
+
+.cla-icon-accordion-closed {
+	background-position: 0 -320px;
+}
+
+.cla-icon-accordion-open {
+	background-position: -20px -320px;
+}
+
+.cla-icon-add {
+	background-position: -620px -120px;
+}
+
+.cla-icon-alarm {
+	background-position: -600px -180px;
+}
+
+.cla-icon-anchor {
+	background-position: -620px -180px;
+}
+
+.cla-icon-application {
+	background-position: -640px -180px;
+}
+
+.cla-icon-application2 {
+	background-position: -660px -180px;
+}
+
+.cla-icon-application-add {
+	background-position: -600px -20px;
+}
+
+.cla-icon-application-cascade {
+	background-position: -620px -20px;
+}
+
+.cla-icon-application-delete {
+	background-position: -640px -20px;
+}
+
+.cla-icon-application-double {
+	background-position: -660px -20px;
+}
+
+.cla-icon-application-edit {
+	background-position: -280px -180px;
+}
+
+.cla-icon-application-error {
+	background-position: -580px -160px;
+}
+
+.cla-icon-application-form {
+	background-position: -660px -60px;
+}
+
+.cla-icon-application-get {
+	background-position: -640px -120px;
+}
+
+.cla-icon-application-go {
+	background-position: -580px -280px;
+}
+
+.cla-icon-application-home {
+	background-position: -600px -280px;
+}
+
+.cla-icon-application-key {
+	background-position: -620px -280px;
+}
+
+.cla-icon-application-lightning {
+	background-position: -640px -280px;
+}
+
+.cla-icon-application-link {
+	background-position: -660px -280px;
+}
+
+.cla-icon-application-osx {
+	background-position: -660px -140px;
+}
+
+.cla-icon-application-osx-terminal {
+	background-position: -640px -100px;
+}
+
+.cla-icon-application-put {
+	background-position: -560px 0;
+}
+
+.cla-icon-application-side-boxes {
+	background-position: -560px -20px;
+}
+
+.cla-icon-application-side-contract {
+	background-position: -560px -40px;
+}
+
+.cla-icon-application-side-expand {
+	background-position: -560px -60px;
+}
+
+.cla-icon-application-side-list {
+	background-position: -560px -80px;
+}
+
+.cla-icon-application-side-tree {
+	background-position: -560px -100px;
+}
+
+.cla-icon-application-split {
+	background-position: -560px -120px;
+}
+
+.cla-icon-application-tile-horizontal {
+	background-position: -560px -140px;
+}
+
+.cla-icon-application-tile-vertical {
+	background-position: -560px -160px;
+}
+
+.cla-icon-application-view-columns {
+	background-position: -560px -180px;
+}
+
+.cla-icon-application-view-detail {
+	background-position: -560px -200px;
+}
+
+.cla-icon-application-view-gallery {
+	background-position: -560px -220px;
+}
+
+.cla-icon-application-view-icons {
+	background-position: -560px -240px;
+}
+
+.cla-icon-application-view-list {
+	background-position: -560px -260px;
+}
+
+.cla-icon-application-view-tile {
+	background-position: -560px -280px;
+}
+
+.cla-icon-application-view-xp {
+	background-position: -540px 0;
+}
+
+.cla-icon-application-view-xp-terminal {
+	background-position: -540px -20px;
+}
+
+.cla-icon-arrow-branch {
+	background-position: -620px -200px;
+}
+
+.cla-icon-arrow-divide {
+	background-position: -540px -40px;
+}
+
+.cla-icon-arrow-down {
+	background-position: -680px -200px;
+}
+
+.cla-icon-arrow-in {
+	background-position: -540px -60px;
+}
+
+.cla-icon-arrow-inout {
+	background-position: -540px -80px;
+}
+
+.cla-icon-arrow-join {
+	background-position: -640px -200px;
+}
+
+.cla-icon-arrow-left {
+	background-position: -660px -200px;
+}
+
+.cla-icon-arrow-merge {
+	background-position: -600px -100px;
+}
+
+.cla-icon-arrow-out {
+	background-position: -540px -100px;
+}
+
+.cla-icon-arrow-redo {
+	background-position: -540px -120px;
+}
+
+.cla-icon-arrow-refresh {
+	background-position: -540px -140px;
+}
+
+.cla-icon-arrow-right {
+	background-position: -620px -60px;
+}
+
+.cla-icon-arrow-undo {
+	background-position: -540px -160px;
+}
+
+.cla-icon-arrow-up {
+	background-position: -680px -180px;
+}
+
+.cla-icon-asterisk-orange {
+	background-position: -540px -180px;
+}
+
+.cla-icon-attach {
+	background-position: -540px -200px;
+}
+
+.cla-icon-attach2 {
+	background-position: -540px -220px;
+}
+
+.cla-icon-award-star-gold {
+	background-position: -540px -240px;
+}
+
+.cla-icon-bandaid {
+	background-position: -540px -260px;
+}
+
+.cla-icon-basket {
+	background-position: -600px -40px;
+}
+
+.cla-icon-bell {
+	background-position: -620px -40px;
+}
+
+.cla-icon-bin-closed {
+	background-position: -520px 0;
+}
+.cla-icon-blank {
+	background-position: -500px -500px;
+}
+
+.cla-icon-blog {
+	background-position: -520px -20px;
+}
+
+.cla-icon-blueprint {
+	background-position: -520px -40px;
+}
+
+.cla-icon-blueprint-horizontal {
+	background-position: -520px -60px;
+}
+
+.cla-icon-bluetooth {
+	background-position: -520px -80px;
+}
+
+.cla-icon-bomb {
+	background-position: -520px -140px;
+}
+
+.cla-icon-book {
+	background-position: -520px -160px;
+}
+
+.cla-icon-book-addresses {
+	background-position: -520px -180px;
+}
+
+.cla-icon-book-next {
+	background-position: -520px -200px;
+}
+
+.cla-icon-book-open {
+	background-position: -520px -220px;
+}
+
+.cla-icon-book-previous {
+	background-position: -520px -240px;
+}
+
+.cla-icon-bookmark {
+	background-position: -520px -260px;
+}
+
+.cla-icon-implode {
+	background-position: -400px -140px;
+}
+
+.cla-icon-explode {
+	background-position: -400px -160px;
+}
+.cla-icon-bookmark-book {
+	background-position: -520px -280px;
+}
+
+.cla-icon-bookmark-book-open {
+	background-position: -500px 0;
+}
+
+.cla-icon-bookmark-document {
+	background-position: -500px -20px;
+}
+
+.cla-icon-bookmark-folder {
+	background-position: -500px -40px;
+}
+
+.cla-icon-books {
+	background-position: -500px -60px;
+}
+
+.cla-icon-box {
+	background-position: -500px -80px;
+}
+
+.cla-icon-brick {
+	background-position: -500px -100px;
+}
+
+.cla-icon-bricks {
+	background-position: -500px -120px;
+}
+
+.cla-icon-briefcase {
+	background-position: -500px -140px;
+}
+
+.cla-icon-bug {
+	background-position: -520px -100px;
+}
+
+.cla-icon-buildings {
+	background-position: -680px -40px;
+}
+
+.cla-icon-bullet-add1 {
+	background-position: -640px -40px;
+}
+
+.cla-icon-bullet-add2 {
+	background-position: -660px -40px;
+}
+
+.cla-icon-bullet-key {
+	background-position: -620px -80px;
+}
+
+.cla-icon-bullet-neutral {
+	background-position: -220px -300px;
+}
+
+.cla-icon-bullet-pin {
+	background-position: -120px -322px;
+}
+
+.cla-icon-bullet-subtract {
+	background-position: -200px -300px;
+}
+
+.cla-icon-cake {
+	background-position: -520px -120px;
+}
+
+.cla-icon-calculator {
+	background-position: -500px -160px;
+}
+
+.cla-icon-calendar1 {
+	background-position: -500px -180px;
+}
+
+.cla-icon-calendar2 {
+	background-position: -500px -200px;
+}
+
+.cla-icon-calendar3 {
+	background-position: -420px -140px;
+}
+
+.cla-icon-calendar-empty {
+	background-position: -140px -300px;
+}
+
+.cla-icon-camera {
+	background-position: -500px -220px;
+}
+
+.cla-icon-cancel {
+	background-position: -500px -240px;
+}
+
+.cla-icon-car {
+	background-position: -640px -60px;
+}
+
+.cla-icon-cart {
+	background-position: -500px -280px;
+}
+
+.cla-icon-cd {
+	background-position: -480px 0;
+}
+
+.cla-icon-chart-bar {
+	background-position: -480px -20px;
+}
+
+.cla-icon-chart-curve {
+	background-position: -480px -40px;
+}
+
+.cla-icon-chart-line {
+	background-position: -500px -260px;
+}
+
+.cla-icon-chart-organisation {
+	background-position: -640px -80px;
+}
+
+.cla-icon-chart-pie {
+	background-position: -480px -60px;
+}
+
+.cla-icon-checkout-no-download {
+	background-position: -240px -300px;
+}
+
+.cla-icon-checkbox {
+	background-position: -520px -300px;
+}
+
+.cla-icon-checkin {
+	background-position: -440px -300px;
+}
+
+.cla-icon-clipboard-paste-image {
+	background-position: -480px -80px;
+}
+
+.cla-icon-clipboard-remove {
+	background-position: -320px -300px;
+}
+
+.cla-icon-clipboard-sign {
+	background-position: -480px -100px;
+}
+
+.cla-icon-clipboard-text {
+	background-position: -480px -120px;
+}
+
+.cla-icon-clock {
+	background-position: -480px -140px;
+}
+
+.cla-icon-close {
+	background-position: -40px -300px;
+}
+
+.cla-icon-close-white {
+	background-position: -160px -300px;
+	background-color: #333;
+}
+
+.cla-icon-cog {
+	background-position: -480px -160px;
+}
+
+.cla-icon-cog-white {
+	background-position: -460px -300px;
+}
+
+.cla-icon-coins {
+	background-position: -480px -180px;
+}
+
+.cla-icon-color-swatch1 {
+	background-position: -480px -200px;
+}
+
+.cla-icon-color-swatch2 {
+	background-position: -480px -220px;
+}
+
+.cla-icon-comment {
+	background-position: -480px -240px;
+}
+
+.cla-icon-compass {
+	background-position: -480px -260px;
+}
+
+.cla-icon-compress {
+	background-position: -480px -280px;
+}
+
+.cla-icon-computer {
+	background-position: -460px -0;
+}
+
+.cla-icon-connect {
+	background-position: -460px -20px;
+}
+
+.cla-icon-contrast {
+	background-position: -460px -40px;
+}
+
+.cla-icon-control-eject {
+	background-position: -460px -60px;
+}
+
+.cla-icon-control-end {
+	background-position: -460px -80px;
+}
+
+.cla-icon-control-equalizer {
+	background-position: -460px -100px;
+}
+
+.cla-icon-control-fastforward {
+	background-position: -460px -120px;
+}
+
+.cla-icon-control-pause {
+	background-position: -460px -140px;
+}
+
+.cla-icon-control-play {
+	background-position: -460px -160px;
+}
+
+.cla-icon-control-record {
+	background-position: -680px -20px;
+}
+
+.cla-icon-control-repeat {
+	background-position: -460px -180px;
+}
+
+.cla-icon-control-rewind {
+	background-position: -460px -200px;
+}
+
+.cla-icon-control-start {
+	background-position: -460px -220px;
+}
+
+.cla-icon-control-stop {
+	background-position: -460px -240px;
+}
+
+.cla-icon-control-wheel {
+	background-position: -460px -260px;
+}
+
+.cla-icon-counter {
+	background-position: -440px -60px;
+}
+
+.cla-icon-counter-count {
+	background-position: -440px 0;
+}
+
+.cla-icon-counter-count-up {
+	background-position: -440px -20px;
+}
+
+.cla-icon-counter-reset {
+	background-position: -440px -40px;
+}
+
+.cla-icon-counter-stop {
+	background-position: -440px -60px;
+}
+
+.cla-icon-cross {
+	background-position: -40px -80px;
+}
+
+.cla-icon-cross-octagon {
+	background-position: -440px -100px;
+}
+
+.cla-icon-cross-octagon-frame {
+	background-position: -440px -120px;
+}
+
+.cla-icon-cross-shield {
+	background-position: -440px -140px;
+}
+
+.cla-icon-cross-shield2 {
+	background-position: -440px -160px;
+}
+
+.cla-icon-crown {
+	background-position: -440px -180px;
+}
+
+.cla-icon-crown-bronze {
+	background-position: -420px 0;
+}
+
+.cla-icon-crown-silver {
+	background-position: -420px -20px;
+}
+
+.cla-icon-css {
+	background-position: -420px -40px;
+}
+
+.cla-icon-cursor {
+	background-position: -420px -60px;
+}
+
+.cla-icon-cut {
+	background-position: -420px -80px;
+}
+
+.cla-icon-dashboard {
+	background-position: -420px -100px;
+}
+
+.cla-icon-database {
+	background-position: -420px -140px;
+}
+
+.cla-icon-databases {
+	background-position: -420px -160px;
+}
+
+.cla-icon-delete {
+	background-position: -420px -180px;
+}
+
+.cla-icon-delete2 {
+	background-position: -440px -80px;
+}
+
+.cla-icon-delivery {
+	background-position: -420px -200px;
+}
+
+.cla-icon-desktop {
+	background-position: -420px -220px;
+}
+
+.cla-icon-desktop-empty {
+	background-position: -420px -240px;
+}
+
+.cla-icon-direction {
+	background-position: -420px -260px;
+}
+
+.cla-icon-disconnect {
+	background-position: -420px -280px;
+}
+
+.cla-icon-disk {
+	background-position: -440px -240px;
+}
+
+.cla-icon-doc-access {
+	background-position: -440px -260px;
+}
+
+.cla-icon-doc-break {
+	background-position: -440px -200px;
+}
+
+.cla-icon-doc-convert {
+	background-position: -440px -280px;
+}
+
+.cla-icon-doc-excel-csv {
+	background-position: -400px 0;
+}
+
+.cla-icon-doc-excel-table {
+	background-position: -400px -20px;
+}
+
+.cla-icon-doc-film {
+	background-position: -400px -40px;
+}
+
+.cla-icon-doc-google {
+	background-position: -680px -260px;
+}
+
+.cla-icon-doc-illustrator {
+	background-position: -400px -60px;
+}
+
+.cla-icon-doc-indesign {
+	background-position: -440px -300px;
+}
+
+.cla-icon-doc-music {
+	background-position: -400px -80px;
+}
+
+.cla-icon-doc-music-playlist {
+	background-position: -400px -100px;
+}
+
+.cla-icon-doc-office {
+	background-position: -400px -120px;
+}
+
+.cla-icon-doc-page {
+	background-position: -400px -140px;
+}
+
+.cla-icon-doc-page-previous {
+	background-position: -400px -160px;
+}
+
+.cla-icon-doc-pdf {
+	background-position: -400px -180px;
+}
+
+.cla-icon-doc-photoshop {
+	background-position: -400px -200px;
+}
+
+.cla-icon-doc-resize {
+	background-position: -400px -220px;
+}
+
+.cla-icon-doc-resize-actual {
+	background-position: -400px -240px;
+}
+
+.cla-icon-doc-shred {
+	background-position: -400px -260px;
+}
+
+.cla-icon-doc-stand {
+	background-position: -400px -280px;
+}
+
+.cla-icon-doc-table {
+	background-position: -380px 0;
+}
+
+.cla-icon-doc-tag {
+	background-position: -380px -20px;
+}
+
+.cla-icon-doc-text-image {
+	background-position: -380px -40px;
+}
+
+.cla-icon-door {
+	background-position: -380px -60px;
+}
+
+.cla-icon-door-in {
+	background-position: -380px -80px;
+}
+
+.cla-icon-drawer {
+	background-position: -380px -100px;
+}
+
+.cla-icon-drink {
+	background-position: -380px -120px;
+}
+
+.cla-icon-drink-empty {
+	background-position: -380px -140px;
+}
+
+.cla-icon-drive {
+	background-position: -380px -160px;
+}
+
+.cla-icon-drive-burn {
+	background-position: -380px -180px;
+}
+
+.cla-icon-drive-cd {
+	background-position: -380px -200px;
+}
+
+.cla-icon-drive-cd-empty {
+	background-position: -380px -220px;
+}
+
+.cla-icon-drive-delete {
+	background-position: -380px -240px;
+}
+
+.cla-icon-drive-disk {
+	background-position: -380px -260px;
+}
+
+.cla-icon-drive-error {
+	background-position: -380px -280px;
+}
+
+.cla-icon-drive-go {
+	background-position: -360px 0;
+}
+
+.cla-icon-drive-link {
+	background-position: -360px -20px;
+}
+
+.cla-icon-drive-network {
+	background-position: -360px -40px;
+}
+
+.cla-icon-drive-rename {
+	background-position: -360px -60px;
+}
+
+.cla-icon-dvd {
+	background-position: -360px -80px;
+}
+
+.cla-icon-email {
+	background-position: -360px -100px;
+}
+
+.cla-icon-email-archive {
+	background-position: -420px -300px;
+}
+
+.cla-icon-email-edit {
+	background-position: -400px -300px;
+}
+
+.cla-icon-email-open {
+	background-position: -360px -120px;
+}
+
+.cla-icon-email-open-image {
+	background-position: -360px -140px;
+}
+
+.cla-icon-email-receive {
+	background-position: -380px -300px;
+}
+
+.cla-icon-email-send {
+	background-position: -360px -300px;
+}
+
+.cla-icon-emoticon-evilgrin {
+	background-position: -360px -160px;
+}
+
+.cla-icon-emoticon-grin {
+	background-position: -360px -180px;
+}
+
+.cla-icon-emoticon-happy {
+	background-position: -360px -200px;
+}
+
+.cla-icon-emoticon-smile {
+	background-position: -340px 0;
+}
+
+.cla-icon-emoticon-suprised {
+	background-position: -340px -20px;
+}
+
+.cla-icon-emoticon-tongue {
+	background-position: -340px -40px;
+}
+
+.cla-icon-emoticon-unhappy {
+	background-position: -340px -60px;
+}
+
+.cla-icon-emoticon-waii {
+	background-position: -340px -80px;
+}
+
+.cla-icon-emoticon-wink {
+	background-position: -340px -100px;
+}
+
+.cla-icon-envelope {
+	background-position: -340px -120px;
+}
+
+.cla-icon-envelope2 {
+	background-position: -340px -140px;
+}
+
+.cla-icon-error {
+	background-position: -340px -160px;
+}
+
+.cla-icon-exclamation {
+	background-position: -340px -180px;
+}
+
+.cla-icon-exclamation-octagon-frame {
+	background-position: -340px -200px;
+}
+
+.cla-icon-eye {
+	background-position: -340px -217px;
+}
+
+.cla-icon-eye-hidden {
+	background-position: -340px -300px;
+}
+
+.cla-icon-feed {
+	background-position: -340px -240px;
+}
+
+.cla-icon-feed-balloon {
+	background-position: -340px -260px;
+}
+
+.cla-icon-feed-document {
+	background-position: -340px -280px;
+}
+
+.cla-icon-female {
+	background-position: -320px 0;
+}
+
+.cla-icon-film {
+	background-position: -320px -20px;
+}
+
+.cla-icon-films {
+	background-position: -320px -40px;
+}
+
+.cla-icon-filter {
+	background-position: -2px -302px;
+}
+
+.cla-icon-find {
+	background-position: -320px -60px;
+}
+
+.cla-icon-flag-amber {
+	background-position: -260px -320px;
+}
+
+.cla-icon-flag-black {
+	background-position: -280px -320px;
+}
+
+.cla-icon-flag-blue {
+	background-position: -320px -80px;
+}
+
+.cla-icon-flag-green {
+	background-position: -240px -320px;
+}
+
+.cla-icon-flag-red {
+	background-position: -220px -320px;
+}
+
+.cla-icon-flag-white {
+	background-position: -300px -320px;
+}
+
+.cla-icon-folder {
+	background-position: -360px -220px;
+}
+
+.cla-icon-folder-add {
+	background-position: -680px -79px;
+}
+
+.cla-icon-folder-open {
+	background-position: -360px -320px;
+}
+
+.cla-icon-font {
+	background-position: -320px -100px;
+}
+
+.cla-icon-funnel {
+	background-position: -320px -120px;
+}
+
+.cla-icon-gdoc-link {
+	background-position: -700px -260px;
+}
+
+.cla-icon-grid {
+	background-position: -360px -240px;
+}
+
+.cla-icon-grid-dot {
+	background-position: -540px -280px;
+}
+
+.cla-icon-group {
+	background-position: -320px -140px;
+}
+
+.cla-icon-hammer {
+	background-position: -320px -160px;
+}
+
+.cla-icon-hammer-screwdriver {
+	background-position: -320px -180px;
+}
+
+.cla-icon-hand {
+	background-position: -320px -200px;
+}
+
+.cla-icon-hand-point {
+	background-position: -360px -260px;
+}
+
+.cla-icon-heart {
+	background-position: -320px -220px;
+}
+
+.cla-icon-heart-break {
+	background-position: -320px -240px;
+}
+
+.cla-icon-heart-empty {
+	background-position: -320px -260px;
+}
+
+.cla-icon-heart-half {
+	background-position: -320px -280px;
+}
+
+.cla-icon-heart-small {
+	background-position: -660px -80px;
+}
+
+.cla-icon-help {
+	background-position: -300px 0;
+}
+
+.cla-icon-highlighter {
+	background-position: -300px -20px;
+}
+
+.cla-icon-house {
+	background-position: -300px -40px;
+}
+
+.cla-icon-house-white {
+	background-position: -160px -320px;
+}
+
+.cla-icon-html {
+	background-position: -300px -60px;
+}
+
+.cla-icon-image1 {
+	background-position: -300px -80px;
+}
+
+.cla-icon-image2 {
+	background-position: -300px -100px;
+}
+
+.cla-icon-images {
+	background-position: -300px -120px;
+}
+
+.cla-icon-inbox {
+	background-position: -300px -140px;
+}
+
+.cla-icon-ipod {
+	background-position: -300px -160px;
+}
+
+.cla-icon-ipod-cast {
+	background-position: -300px -180px;
+}
+
+.cla-icon-joystick {
+	background-position: -300px -200px;
+}
+
+.cla-icon-key {
+	background-position: -300px -220px;
+}
+
+.cla-icon-keyboard {
+	background-position: -440px -220px;
+}
+
+.cla-icon-label {
+	background-position: -480px -300px;
+}
+
+.cla-icon-layer-transparent {
+	background-position: -300px -240px;
+}
+
+.cla-icon-layers {
+	background-position: -300px -260px;
+}
+
+.cla-icon-layout {
+	background-position: -300px -280px;
+}
+
+.cla-icon-layout-header-footer-3 {
+	background-position: -280px -20px;
+}
+
+.cla-icon-layout-header-footer-3-mix {
+	background-position: -280px -40px;
+}
+
+.cla-icon-layout-join {
+	background-position: -280px -60px;
+}
+
+.cla-icon-join-vertical {
+	background-position: -280px -80px;
+}
+
+.cla-icon-layout-select {
+	background-position: -280px -100px;
+}
+
+.cla-icon-layout-select-content {
+	background-position: -280px -120px;
+}
+
+.cla-icon-layout-select-footer {
+	background-position: -280px -140px;
+}
+
+.cla-icon-layout-select-sidebar {
+	background-position: -280px -200px;
+}
+
+.cla-icon-layout-split {
+	background-position: -280px -220px;
+}
+
+.cla-icon-layout-split-vertical {
+	background-position: -280px -240px;
+}
+
+.cla-icon-lifebuoy {
+	background-position: -280px -260px;
+}
+
+.cla-icon-lightbulb {
+	background-position: -280px -280px;
+}
+
+.cla-icon-lightbulb-off {
+	background-position: -260px 0;
+}
+
+.cla-icon-lightning {
+	background-position: -260px -20px;
+}
+
+.cla-icon-link {
+	background-position: -360px -280px;
+}
+
+.cla-icon-link-break {
+	background-position: -280px 0;
+}
+
+.cla-icon-lock {
+	background-position: -260px -40px;
+}
+
+.cla-icon-lock2 {
+	background-position: -260px -300px;
+}
+
+.cla-icon-lock-unlock {
+	background-position: -280px -180px;
+}
+
+.cla-icon-magnet {
+	background-position: -280px -160px;
+}
+
+.cla-icon-magnifier {
+	background-position: -260px -60px;
+}
+
+.cla-icon-magnifier-zoom-in {
+	background-position: -260px -80px;
+}
+
+.cla-icon-male {
+	background-position: -260px -100px;
+}
+
+.cla-icon-map {
+	background-position: -260px -120px;
+}
+
+.cla-icon-marker {
+	background-position: -260px -140px;
+}
+
+.cla-icon-medal-bronze {
+	background-position: -260px -160px;
+}
+
+.cla-icon-medal-gold {
+	background-position: -260px -200px;
+}
+
+.cla-icon-media-player-small-blue {
+	background-position: -260px -220px;
+}
+
+.cla-icon-microphone {
+	background-position: -260px -240px;
+}
+
+.cla-icon-mobile-phone {
+	background-position: -260px -260px;
+}
+
+.cla-icon-money {
+	background-position: -260px -280px;
+}
+
+.cla-icon-money-dollar {
+	background-position: -240px 0;
+}
+
+.cla-icon-money-euro {
+	background-position: -260px -180px;
+}
+
+.cla-icon-money-pound {
+	background-position: -240px -20px;
+}
+
+.cla-icon-money-yen {
+	background-position: -240px -40px;
+}
+
+.cla-icon-monitor {
+	background-position: -240px -60px;
+}
+
+.cla-icon-mouse {
+	background-position: -240px -80px;
+}
+
+.cla-icon-move {
+	background-position: -200px -320px;
+}
+
+.cla-icon-music {
+	background-position: -240px -100px;
+}
+
+.cla-icon-music-beam {
+	background-position: -240px -120px;
+}
+
+.cla-icon-neutral {
+	background-position: -240px -140px;
+}
+
+.cla-icon-new {
+	background-position: -240px -160px;
+}
+
+.cla-icon-newspaper {
+	background-position: -240px -180px;
+}
+
+.cla-icon-note {
+	background-position: -240px -200px;
+}
+
+.cla-icon-nuclear {
+	background-position: -240px -220px;
+}
+
+.cla-icon-office {
+	background-position: -480px -300px;
+}
+
+.cla-icon-package {
+	background-position: -240px -240px;
+}
+
+.cla-icon-parent {
+	background-position: -100px -320px;
+}
+
+.cla-icon-page {
+	background-position: -240px -260px;
+}
+
+.cla-icon-page2 {
+	background-position: -240px -280px;
+}
+
+.cla-icon-page2-copy {
+	background-position: -220px 0;
+}
+
+.cla-icon-page-code {
+	background-position: -220px -20px;
+}
+
+.cla-icon-page-copy {
+	background-position: -220px -40px;
+}
+
+.cla-icon-page-excel {
+	background-position: -220px -60px;
+}
+
+.cla-icon-page-lightning {
+	background-position: -220px -80px;
+}
+
+.cla-icon-page-paste {
+	background-position: -220px -100px;
+}
+
+.cla-icon-page-red {
+	background-position: -220px -120px;
+}
+
+.cla-icon-page-refresh {
+	background-position: -220px -140px;
+}
+
+.cla-icon-page-save {
+	background-position: -220px -160px;
+}
+
+.cla-icon-page-white-cplusplus {
+	background-position: -220px -180px;
+}
+
+.cla-icon-page-white-csharp {
+	background-position: -220px -200px;
+}
+
+.cla-icon-page-white-cup {
+	background-position: -220px -220px;
+}
+
+.cla-icon-page-white-database {
+	background-position: -220px -240px;
+}
+
+.cla-icon-page-white-delete {
+	background-position: -220px -260px;
+}
+
+.cla-icon-page-white-dvd {
+	background-position: -200px 0;
+}
+
+.cla-icon-page-white-edit {
+	background-position: -200px -20px;
+}
+
+.cla-icon-page-white-error {
+	background-position: -200px -40px;
+}
+
+.cla-icon-page-white-excel {
+	background-position: -200px -60px;
+}
+
+.cla-icon-page-white-find {
+	background-position: -200px -80px;
+}
+
+.cla-icon-page-white-flash {
+	background-position: -200px -100px;
+}
+
+.cla-icon-page-white-freehand {
+	background-position: -200px -120px;
+}
+
+.cla-icon-page-white-gear {
+	background-position: -200px -140px;
+}
+
+.cla-icon-page-white-get {
+	background-position: -200px -160px;
+}
+
+.cla-icon-page-white-paintbrush {
+	background-position: -200px -180px;
+}
+
+.cla-icon-page-white-paste {
+	background-position: -200px -200px;
+}
+
+.cla-icon-page-white-php {
+	background-position: -200px -220px;
+}
+
+.cla-icon-page-white-picture {
+	background-position: -200px -240px;
+}
+
+.cla-icon-page-white-powerpoint {
+	background-position: -200px -260px;
+}
+
+.cla-icon-page-white-put {
+	background-position: -200px -280px;
+}
+
+.cla-icon-page-white-ruby {
+	background-position: -180px 0;
+}
+
+.cla-icon-page-white-stack {
+	background-position: -180px -20px;
+}
+
+.cla-icon-page-white-star {
+	background-position: -180px -40px;
+}
+
+.cla-icon-page-white-swoosh {
+	background-position: -180px -60px;
+}
+
+.cla-icon-page-white-text {
+	background-position: -180px -80px;
+}
+
+.cla-icon-page-white-text-add {
+	background-position: -680px -60px;
+}
+
+.cla-icon-page-white-text-width {
+	background-position: -180px -100px;
+}
+
+.cla-icon-page-white-tux {
+	background-position: -180px -120px;
+}
+
+.cla-icon-page-white-vector {
+	background-position: -180px -140px;
+}
+
+.cla-icon-page-white-visualstudio {
+	background-position: -180px -160px;
+}
+
+.cla-icon-page-white-width {
+	background-position: -180px -180px;
+}
+
+.cla-icon-page-white-word {
+	background-position: -180px -200px;
+}
+
+.cla-icon-page-white-world {
+	background-position: -180px -220px;
+}
+
+.cla-icon-page-white-wrench {
+	background-position: -180px -240px;
+}
+
+.cla-icon-page-white-zip {
+	background-position: -180px -260px;
+}
+
+.cla-icon-paintbrush {
+	background-position: -180px -280px;
+}
+
+.cla-icon-paintcan {
+	background-position: -160px 0;
+}
+
+.cla-icon-palette {
+	background-position: -160px -20px;
+}
+
+.cla-icon-paper-bag {
+	background-position: -160px -40px;
+}
+
+.cla-icon-paste-plain {
+	background-position: -160px -60px;
+}
+
+.cla-icon-paste-word {
+	background-position: -160px -80px;
+}
+
+.cla-icon-pencil {
+	background-position: -160px -100px;
+}
+
+.cla-icon-pencil-small {
+	background-position: -180px -300px;
+}
+
+.cla-icon-photo {
+	background-position: -160px -120px;
+}
+
+.cla-icon-photo-album {
+	background-position: -160px -140px;
+}
+
+.cla-icon-photos {
+	background-position: -160px -160px;
+}
+
+.cla-icon-piano {
+	background-position: -160px -180px;
+}
+
+.cla-icon-picture {
+	background-position: -160px -200px;
+}
+
+.cla-icon-pilcrow {
+	background-position: -140px 0;
+}
+
+.cla-icon-pill {
+	background-position: -140px -20px;
+}
+
+.cla-icon-pin {
+	background-position: -140px -40px;
+}
+
+.cla-icon-pipette {
+	background-position: -160px -220px;
+}
+
+.cla-icon-playing-card {
+	background-position: -140px -60px;
+}
+
+.cla-icon-plug {
+	background-position: -140px -80px;
+}
+
+.cla-icon-plugin {
+	background-position: -140px -100px;
+}
+
+.cla-icon-printer {
+	background-position: -140px -120px;
+}
+
+.cla-icon-projection-screen {
+	background-position: -160px -240px;
+}
+
+.cla-icon-projection-screen-present {
+	background-position: -160px -280px;
+}
+
+.cla-icon-radio-button {
+	background-position: -500px -300px;
+}
+
+.cla-icon-rainbow {
+	background-position: -140px -140px;
+}
+
+.cla-icon-report {
+	background-position: -140px -160px;
+}
+
+.cla-icon-rocket {
+	background-position: -140px -180px;
+}
+
+.cla-icon-room {
+	background-position: -300px -300px;
+}
+
+.cla-icon-rosette {
+	background-position: -140px -200px;
+}
+
+.cla-icon-rss {
+	background-position: -140px -220px;
+}
+
+.cla-icon-ruby {
+	background-position: -120px -240px;
+}
+
+.cla-icon-ruler1 {
+	background-position: -220px -280px;
+}
+
+.cla-icon-ruler2 {
+	background-position: -120px -220px;
+}
+
+.cla-icon-ruler-crop {
+	background-position: -120px -200px;
+}
+
+.cla-icon-ruler-triangle {
+	background-position: -120px -180px;
+}
+
+.cla-icon-safe {
+	background-position: -120px -160px;
+}
+
+.cla-icon-search {
+	background-position: -20px -300px;
+}
+
+.cla-icon-script {
+	background-position: -120px -140px;
+}
+
+.cla-icon-select {
+	background-position: -540px -300px;
+}
+
+.cla-icon-select-user {
+	background-position: -560px -300px;
+}
+
+.cla-icon-selection {
+	background-position: -580px -180px;
+}
+
+.cla-icon-selection-select {
+	background-position: -120px -120px;
+}
+
+.cla-icon-server {
+	background-position: -120px -100px;
+}
+
+.cla-icon-shading {
+	background-position: -100px 0;
+}
+
+.cla-icon-shape-align-bottom {
+	background-position: -140px -240px;
+}
+
+.cla-icon-shape-align-center {
+	background-position: -100px -20px;
+}
+
+.cla-icon-shape-align-left {
+	background-position: -120px -80px;
+}
+
+.cla-icon-shape-align-middle {
+	background-position: -100px -40px;
+}
+
+.cla-icon-shape-align-right {
+	background-position: -120px -60px;
+}
+
+.cla-icon-shape-align-top {
+	background-position: -140px -260px;
+}
+
+.cla-icon-shape-flip-horizontal {
+	background-position: -120px -260px;
+}
+
+.cla-icon-shape-flip-vertical {
+	background-position: -120px -40px;
+}
+
+.cla-icon-shape-group {
+	background-position: -100px -60px;
+}
+
+.cla-icon-shape-handles {
+	background-position: -100px -80px;
+}
+
+.cla-icon-shape-move-back {
+	background-position: -100px -100px;
+}
+
+.cla-icon-shape-move-backwards {
+	background-position: -100px -120px;
+}
+
+.cla-icon-shape-move-forwards {
+	background-position: -100px -140px;
+}
+
+.cla-icon-shape-move-front {
+	background-position: -100px -160px;
+}
+
+.cla-icon-shape-square {
+	background-position: -100px -180px;
+}
+
+.cla-icon-shield {
+	background-position: -100px -200px;
+}
+
+.cla-icon-sitemap {
+	background-position: -100px -220px;
+}
+
+.cla-icon-slide {
+	background-position: -100px -240px;
+}
+
+.cla-icon-slides {
+	background-position: -100px -260px;
+}
+
+.cla-icon-slides-stack {
+	background-position: -100px -280px;
+}
+
+.cla-icon-smiley-confuse {
+	background-position: -80px -280px;
+}
+
+.cla-icon-smiley-cool {
+	background-position: -80px -260px;
+}
+
+.cla-icon-smiley-cry {
+	background-position: -80px -240px;
+}
+
+.cla-icon-smiley-fat {
+	background-position: -80px -220px;
+}
+
+.cla-icon-smiley-mad {
+	background-position: -80px -200px;
+}
+
+.cla-icon-smiley-red {
+	background-position: -80px -180px;
+}
+
+.cla-icon-smiley-roll {
+	background-position: -80px -160px;
+}
+
+.cla-icon-smiley-slim {
+	background-position: -80px -140px;
+}
+
+.cla-icon-smiley-yell {
+	background-position: -80px -120px;
+}
+
+.cla-icon-socket {
+	background-position: -80px -100px;
+}
+
+.cla-icon-sockets {
+	background-position: -80px -80px;
+}
+
+.cla-icon-sort {
+	background-position: -80px -60px;
+}
+
+.cla-icon-sort-alphabet {
+	background-position: -80px -40px;
+}
+
+.cla-icon-sort-date {
+	background-position: -80px -20px;
+}
+
+.cla-icon-sort-disable {
+	background-position: -80px 0;
+}
+
+.cla-icon-sort-number {
+	background-position: -60px 0;
+}
+
+.cla-icon-sort-price {
+	background-position: -60px -20px;
+}
+
+.cla-icon-sort-quantity {
+	background-position: -60px -40px;
+}
+
+.cla-icon-sort-rating {
+	background-position: -60px -60px;
+}
+
+.cla-icon-sound {
+	background-position: -60px -80px;
+}
+
+.cla-icon-sound-note {
+	background-position: -60px -100px;
+}
+
+.cla-icon-spellcheck {
+	background-position: -60px -120px;
+}
+
+.cla-icon-sport-8ball {
+	background-position: -60px -140px;
+}
+
+.cla-icon-sport-basketball {
+	background-position: -60px -160px;
+}
+
+.cla-icon-sport-football {
+	background-position: -60px -180px;
+}
+
+.cla-icon-sport-golf {
+	background-position: -60px -200px;
+}
+
+.cla-icon-sport-raquet {
+	background-position: -60px -220px;
+}
+
+.cla-icon-sport-shuttlecock {
+	background-position: -60px -240px;
+}
+
+.cla-icon-sport-soccer {
+	background-position: -60px -260px;
+}
+
+.cla-icon-sport-tennis {
+	background-position: -60px -280px;
+}
+
+.cla-icon-stamp {
+	background-position: -40px -280px;
+}
+
+.cla-icon-star1 {
+	background-position: -40px -260px;
+}
+
+.cla-icon-star2 {
+	background-position: -40px -240px;
+}
+
+.cla-icon-star-empty {
+	background-position: -680px -240px;
+}
+
+.cla-icon-status-online {
+	background-position: -40px -220px;
+}
+
+.cla-icon-stop {
+	background-position: -40px -200px;
+}
+
+.cla-icon-style {
+	background-position: -40px -180px;
+}
+
+.cla-icon-sum {
+	background-position: -40px -160px;
+}
+
+.cla-icon-sum2 {
+	background-position: -40px -140px;
+}
+
+.cla-icon-switch {
+	background-position: -40px -120px;
+}
+
+.cla-icon-tab {
+	background-position: -40px -100px;
+}
+
+.cla-icon-table {
+	background-position: -40px 0;
+}
+
+.cla-icon-tag {
+	background-position: -120px -280px;
+}
+
+.cla-icon-tag-blue {
+	background-position: -20px 0;
+}
+
+.cla-icon-target {
+	background-position: -20px -20px;
+}
+
+.cla-icon-telephone {
+	background-position: -20px -40px;
+}
+
+.cla-icon-television {
+	background-position: -20px -120px;
+}
+
+.cla-icon-text-align-center {
+	background-position: -20px -140px;
+}
+
+.cla-icon-text-align-justify {
+	background-position: -20px -160px;
+}
+
+.cla-icon-text-align-left {
+	background-position: -20px -180px;
+}
+
+.cla-icon-text-align-right {
+	background-position: -20px -200px;
+}
+
+.cla-icon-text-allcaps {
+	background-position: -140px -280px;
+}
+
+.cla-icon-text-bold {
+	background-position: -20px -60px;
+}
+
+.cla-icon-text-columns {
+	background-position: -20px -80px;
+}
+
+.cla-icon-text-dropcaps {
+	background-position: -20px -220px;
+}
+
+.cla-icon-text-heading1 {
+	background-position: -20px -240px;
+}
+
+.cla-icon-text-horizontalrule {
+	background-position: -40px -80px;
+}
+
+.cla-icon-text-indent {
+	background-position: -20px -260px;
+}
+
+.cla-icon-text-indent-remove {
+	background-position: -20px -280px;
+}
+
+.cla-icon-text-italic {
+	background-position: 0 -280px;
+}
+
+.cla-icon-text-kerning {
+	background-position: -20px -100px;
+}
+
+.cla-icon-text-letter-omega {
+	background-position: -120px -20px;
+}
+
+.cla-icon-text-letterspacing {
+	background-position: 0 -260px;
+}
+
+.cla-icon-text-linespacing {
+	background-position: 0 -240px;
+}
+
+.cla-icon-text-list-bullets {
+	background-position: -40px -60px;
+}
+
+.cla-icon-text-list-numbers {
+	background-position: -40px -40px;
+}
+
+.cla-icon-text-lowercase {
+	background-position: 0 -220px;
+}
+
+.cla-icon-text-padding-bottom {
+	background-position: -40px -20px;
+}
+
+.cla-icon-text-padding-left {
+	background-position: 0 -200px;
+}
+
+.cla-icon-text-padding-right {
+	background-position: 0 -180px;
+}
+
+.cla-icon-text-padding-top {
+	background-position: 0 -160px;
+}
+
+.cla-icon-text-signature {
+	background-position: 0 -140px;
+}
+
+.cla-icon-text-smallcaps {
+	background-position: -160px -260px;
+}
+
+.cla-icon-text-strikethrough {
+	background-position: 0 -120px;
+}
+
+.cla-icon-text-subscript {
+	background-position: -120px 0;
+}
+
+.cla-icon-textfield {
+	background-position: 0 -100px;
+}
+
+.cla-icon-textfield-rename {
+	background-position: 0 -80px;
+}
+
+.cla-icon-textarea {
+	background-position: -580px -300px;
+}
+
+.cla-icon-thumbs-up{
+	background-position: -420px -320px;
+}
+
+.cla-icon-thumbs-down{
+	background-position: -440px -319px
+}
+
+.cla-icon-ticket {
+	background-position: 0 -60px;
+}
+
+.cla-icon-timeline-marker {
+	background-position: 0 -40px;
+}
+
+.cla-icon-traffic {
+	background-position: 0 -20px;
+}
+
+.cla-icon-transmit {
+	background-position: 0 0;
+}
+
+.cla-icon-trophy {
+	background-position: -580px 0;
+}
+
+.cla-icon-trophy-bronze {
+	background-position: -580px -20px;
+}
+
+.cla-icon-trophy-silver {
+	background-position: -580px -40px;
+}
+
+.cla-icon-combo-box {
+	background-position: -580px -120px;
+}
+
+.cla-icon-saccordion {
+	background-position: -580px -140px;
+}
+
+.cla-icon-slider1 {
+	background-position: -580px -60px;
+}
+
+.cla-icon-slider2 {
+	background-position: -580px -80px;
+}
+
+.cla-icon-tab-bottom {
+	background-position: -640px -220px;
+}
+
+.cla-icon-tab-content {
+	background-position: -660px -220px;
+}
+
+.cla-icon-tab-disable {
+	background-position: -600px -120px;
+}
+
+.cla-icon-tab-side {
+	background-position: -600px -140px;
+}
+
+.cla-icon-text-field-hidden {
+	background-position: -620px -140px;
+}
+
+.cla-icon-text-field-password {
+	background-position: -640px -140px;
+}
+
+.cla-icon-umbrella {
+	background-position: -580px -100px;
+}
+
+.cla-icon-user {
+	background-position: -580px -220px;
+}
+.cla-icon-users-white {
+	background-position: -140px -318px;
+}
+
+.cla-icon-user-black-female {
+	background-position: -580px -200px;
+}
+
+.cla-icon-user-business {
+	background-position: -600px -220px;
+}
+
+.cla-icon-user-business-boss {
+	background-position: -620px -220px;
+}
+
+.cla-icon-user-female {
+	background-position: -600px -200px;
+}
+
+.cla-icon-user-silhouette {
+	background-position: -580px -240px;
+}
+
+.cla-icon-user-thief {
+	background-position: -620px -240px;
+}
+
+.cla-icon-user-thief-baldie {
+	background-position: -600px -240px;
+}
+
+.cla-icon-vcard {
+	background-position: -640px -240px;
+}
+
+.cla-icon-vector {
+	background-position: -660px -240px;
+}
+
+.cla-icon-view-fixed {
+	background-position: -103px -303px;
+}
+
+.cla-icon-view-full {
+	background-position: -83px -303px;
+	background-position: -123px -303px;
+}
+
+.cla-icon-view-icon {
+	background-position: -42px -321px;
+}
+
+.cla-icon-view-list {
+	background-position: -63px -320px;
+}
+
+.cla-icon-view-list-details {
+	background-position: -82px -320px;
+}
+
+.cla-icon-view-max {
+	background-position: -123px -303px;
+	background-position: -83px -303px;
+}
+
+.cla-icon-wait {
+	background-position: -620px -100px;
+}
+
+.cla-icon-wall {
+	background-position: -600px -160px;
+}
+
+.cla-icon-wall-break {
+	background-position: -620px -160px;
+}
+
+.cla-icon-wall-brick {
+	background-position: -640px -160px;
+}
+
+.cla-icon-wall-disable {
+	background-position: -660px -160px;
+}
+
+.cla-icon-wand {
+	background-position: -660px -120px;
+}
+
+.cla-icon-weather-clouds {
+	background-position: -600px 0;
+}
+
+.cla-icon-weather-cloudy {
+	background-position: -620px 0;
+}
+
+.cla-icon-weather-lightning {
+	background-position: -640px 0;
+}
+
+.cla-icon-weather-rain {
+	background-position: -660px 0;
+}
+
+.cla-icon-weather-snow {
+	background-position: -680px 0;
+}
+
+.cla-icon-weather-sun {
+	background-position: -700px 0;
+}
+
+.cla-icon-webcam {
+	background-position: -660px -100px;
+}
+
+.cla-icon-world {
+	background-position: -580px -260px;
+}
+
+.cla-icon-zone {
+	background-position: -600px -260px;
+}
+
+.cla-icon-zone-money {
+	background-position: -620px -260px;
+}
+
+.cla-icon-zones {
+	background-position: -640px -260px;
+}

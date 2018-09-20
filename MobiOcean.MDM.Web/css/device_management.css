@@ -1,0 +1,78 @@
+/* CSS Document */
+.d1
+{
+margin-top:2%;
+style="font-size:100px;
+}
+
+
+.d2 {
+    width: 22%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: #2A368C;
+    color: #FFFFFF;
+    font-size: 19px;
+    padding: 5px;
+}
+
+.d2a{width:15%;font-size:18px; list-style:none; float:right;}
+.d3{text-align:center;}
+.d3a {
+    float: left;
+    margin-left: 408px;
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 10%;
+    padding: 5px;
+    font-size: 16px;
+}
+.d3b {
+    float: right;
+    margin-right: 255px;
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 10%;
+    padding: 5px;
+    font-size: 16px;
+}
+.d4a{float:left;  margin-left: 109px; font-size:17px;}
+.d4b{float:left; margin-left:215px;}
+.d4aa{padding:3px; width:55px;}
+.d4ab{padding:3px; width:55px;}
+.d4abc{float:left; margin-left:240px;}
+
+
+.d5a{float:left;  margin-left: 109px; font-size:17px;}
+.d5b{float:left; margin-left:215px;}
+.d5aa{padding:3px; width:55px;}
+.d5ab{padding:3px; width:55px;}
+.d5abc{float:left; margin-left:240px;}
+
+
+
+.d6a{float:left;  margin-left: 109px; font-size:17px;}
+.d6b{float:left; margin-left:204px;}
+.d6aa{padding:3px; width:55px;}
+.d6ab{padding:3px; width:55px;}
+.d6abc{float:left; margin-left:240px;}
+
+
+.d7a{float:left;  margin-left: 109px; font-size:17px;}
+.d7b{float:left; margin-left:154px;}
+.d7aa{padding:3px; width:55px;}
+.d7ab{padding:3px; width:55px;}
+.d7abc{float:left; margin-left:240px;}
+
+
+
+.d8a{float:left;  margin-left: 109px; font-size:17px;}
+.d8b{float:left; margin-left:215px;}
+.d8aa{padding:3px; width:55px;}
+.d8ab{padding:3px; width:55px;}
+.d8abc{float:left; margin-left:240px;}
+
+.d9{float:right; margin-right:190px;}
+.d9a{background-color:#2A368C; color:#FFFFFF; width: 67px; padding: 4px;}
+.d9b{background-color:#2A368C; color:#FFFFFF; width: 67px; padding: 4px;}

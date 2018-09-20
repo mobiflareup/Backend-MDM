@@ -1,0 +1,843 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="webmaster.master.cs" Inherits="MobiOcean.MDM.Web.MobiOcean.webmaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <title>MobiOcean</title>
+    <link rel="icon" href="/MobiOcean/Content/img/app_icon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <link href="/MobiOcean/Content/js_css_image/main.css" rel="stylesheet" type="text/css">
+     <link href="/MobiOcean/Content/css/homestyle.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/MobiOcean/Content/css/common.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/MobiOcean/Content/css/boxed.css" media="screen" id="layout" />
+     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/MobiOcean/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/MobiOcean/Content/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/MobiOcean/Content/css/responsive.css" type="text/css">
+    <%--
+   
+   
+    
+    
+   
+
+   
+    --%>
+
+
+    <!-- google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- fonts awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+        .container {
+            min-height: 0% !important;
+        }
+    </style>
+    <style>
+	/* Up arrow control */
+.up-arrow img
+{
+	position:fixed;
+	bottom:7%;
+	right:2%;
+	z-index:100;
+}
+.up-arrow img:hover
+{
+	background:#0a3265;;
+}
+/* Up arrow control end */
+</style>
+<asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/MobiOcean/Content/css/mynav.css" type="text/css" />
+
+    <%--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   --%>
+</head>
+<body>
+    	<div class="up-arrow " style="display:none;">
+			<a href="#"><img src="/MobiOcean/Content/img/up-arrow.png" alt="UP" title="UP" class="img-circle"></a>
+	</div>
+	<div class="up-arrow scroll-up">
+			<a href="#"><img src="/MobiOcean/Content/img/up-arrow.png" alt="UP" title="UP" class="img-circle"></a>
+	</div>
+    <header>
+        <div class="container-fluid">
+            <div class="logo col-lg-3 col-md-3">
+                <a href="<%= MobiOcean.MDM.BAL.Model.Constant.Home%>" class="">
+                    <img src="/MobiOcean/Content/images/Mobi_logo.png" alt="MobiOcean" title="MobiOcean" />
+                </a>
+                <a href="javascript:;" class="logo-certified" alt="AN ISO 27001:2013 & CMM L3 CERTIFIED COMPANY" title="AN ISO 27001:2013 & CMM L3 CERTIFIED COMPANY">
+                    <p class="" style=""><b>AN ISO 27001:2013 & CMM L3 CERTIFIED COMPANY</b></p>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav nav-pills nav-top tpmenu">
+                    <li>
+                        <!--  <a class="mobiorange arialbold" href="http://admin.mobiocean.com/API.aspx">Download</a> -->
+                        <a class="mobiorange arialbold" data-toggle="modal" data-target="#myModaldownload" style="cursor: pointer;">Download</a>
+
+                    </li>
+                    <li>
+                        <a class="mobiorange arialbold" href="Free-Trial">Free Trial</a>
+                    </li>
+                    <li>
+                        <a class="mobiorange arialbold" href="blog">Blog</a>
+                    </li>
+                    <li>
+                        <a class="mobiorange arialbold" href="Contactus">Contact Us</a>
+                    </li>
+                    <li class="phone">
+                        <li><a class="mobiorange arialbold" href="Login">Login</a></li>
+                    </li>
+                </ul>
+            </nav>
+            <nav>
+                <!-- ========================== big menu start here ============================== -->
+
+
+                <div class="navbar hidden-xs " role="navigation" style="border: none;">
+
+                    <div class="navbar-header">
+                    </div>
+                    <div class="collapse navbar-collapse custom-nav-list bigmenu pull-right" id="navbar-collapse">
+                        <!-- php-->
+                        <%MobiOcean.MDM.BAL.Query.websearch wb = new MobiOcean.MDM.BAL.Query.websearch();
+                            System.Data.DataTable dt,dt1,dt2 = new System.Data.DataTable();
+                            dt = wb.GetHeader(); %>
+                        <ul class="nav custom-main nav-pills  " id="mymenu">
+                            <!-- php-->
+
+                            <%if (dt.Rows.Count > 0)
+                                {
+                                    foreach (System.Data.DataRow item in dt.Rows)
+                                    {
+                                        
+                                        dt1 = wb.GetSubHeader(item["id"].ToString());
+                                        if (dt1.Rows.Count > 0)
+                                        {
+                            %>
+                       
+                            <li>
+                                <a href="<%=item["page_url"] %>" id="List1" class="dropdown-toggle arialbold " data-toggle="dropdown">
+                                    <%:item["name"] %>
+                                    <b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-level">
+
+
+
+                                    <% 
+                                        foreach (System.Data.DataRow item1 in dt1.Rows)
+                                        {
+                                           
+                                            dt2 = wb.GetChildHeader(item1["id"].ToString());
+                                            if (dt2.Rows.Count > 0)
+                                            {%>
+                                    <!-- php-->
+                                    <li class='dropdown-submenu'>
+                                        <a tabindex="-1" href="<%: item1["page_url"] %>" class="dropdown-toggle  disabled" data-toggle="dropdown"><%:item1["name"] %></a>
+                                        <ul class='dropdown-menu'>
+
+                                            <%
+                                                foreach (System.Data.DataRow item2 in dt2.Rows)
+                                                {%>
+
+                                            <li><a href="<%:item2["page_url"] %>"><%:item2["name"] %></a></li>
+
+                                            <% }
+                                            %>
+                                        </ul>
+                                    </li>
+                                    <%
+                                        }
+                                        else
+                                        {
+                                    %>
+                                    <li><a href="<%:item1["page_url"] %>"><%:item1["name"] %></a></li>
+                                    <%
+                                            }
+
+                                        }
+                                    %>
+                                </ul>
+                            </li>
+                            <%
+                                }
+                                else
+                                {
+                            %>
+                            <li class=""><a href="<%:item["page_url"] %>" class="arialbold "><%:item["name"] %></a></li>
+                            <%
+                                        }
+
+
+                                    }
+                                }%>
+                        </ul>
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+
+
+            </nav>
+            <!-- modal start here -->
+
+            <div id="myModaldownload" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <center>
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        <a href ="Registration">Register</a> 
+       
+         <-----------<img src="/MobiOcean/Content/img/logo.png" alt="" />------------>
+        <a class="mobiorange arialbold" >Download</a>
+         </center>
+                        </div>
+                        <div class="modal-body">
+                            <center><h3>How to install Mobiocean</h3> </center>
+                            <br>
+                            1. After download, Go to fileManager and find the downloaded file.<br>
+                            2. Click on downloaded file and the installation will be started.<br>
+                            3. After successfull installation You have to activate the app by giving information(Client code, User Code, Mobile no).<br>
+                            4. This information you will get by your admin.
+        
+       
+                        </div>
+                        <div class="modal-footer">
+                            <div style="float: right">
+                                <a href="<%= MobiOcean.MDM.BAL.Model.Constant.Home%>">
+                                    <button type="button" class="btn btn-danger">Cancel</button></a>
+                                <button type="button" class="btn btn-success" id="down">Download</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- modal end here -->
+        </div>
+
+    </header>
+    <!-- ========================== small menu start here ============================== -->
+    <div class="smallmenu">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="mynav">
+
+
+
+
+                <ul class="nav navbar-nav" id="mymenu">
+
+                    <%if (dt.Rows.Count > 0)
+                        {
+                            foreach (System.Data.DataRow item in dt.Rows)
+                            {
+                                //System.Data.DataTable dt1,dt2 = new System.Data.DataTable();
+                                dt1 = wb.GetSubHeader(item["id"].ToString());
+                                if (dt1.Rows.Count > 0)
+                                {
+                    %>
+                    <li>
+                        <a href="<%:item["page_url"] %>" class="dropdown-toggle arialbold " data-toggle="dropdown">
+                            <%:item["name"]%>
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+
+                            <% 
+                                foreach (System.Data.DataRow item1 in dt1.Rows)
+                                {
+                                    
+                                    dt2 = wb.GetChildHeader(item1["id"].ToString());
+                                    if (dt2.Rows.Count > 0)
+                                    {%>
+
+                            <li class='dropdown-submenu'>
+                                <a href="<%:item1["page_url"] %>" class="dropdown-toggle  " data-toggle="dropdown"><%:item1["name"]%></a>
+                                <ul class='dropdown-menu'>
+
+                                    <%
+                                        foreach (System.Data.DataRow item2 in dt2.Rows)
+                                        {%>
+                                    <li><a href="<%:item2["page_url"] %>"><%:item2["name"]%></a></li>
+                                    <% }
+                                    %>
+                                </ul>
+                            </li>
+                            <%
+                                }
+                                else
+                                {
+                            %>
+                            <li><a href="<%:item1["page_url"]%>"><%:item1["name"]%></a></li>
+                            <%
+                                    }
+
+                                }
+                            %>
+                        </ul>
+                    </li>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <li class=""><a href="<%:item["page_url"]%>" class="arialbold "><%:item["name"]%></a></li>
+                    <%
+                                }
+
+                            }
+                        }%>
+                </ul>
+            </div>
+        </nav>
+    </div>
+       <link href="/MobiOcean/Content/assets/modal-effect/css/component.css" rel="stylesheet" />
+    <link href="/MobiOcean/Content/css/magnific-popup.css" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="/MobiOcean/Content/css/jquery.fancybox.css" media="screen" />
+    <script src="/MobiOcean/Content/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/custom.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/common.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/wow.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/bounce.js" type="text/javascript"></script>
+<%--    <script src="/MobiOcean/Content/js/wow.min.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/bounce.min.js" type="text/javascript"></script>--%>
+    <script src="/MobiOcean/Content/js_css_image/main.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <script src="/MobiOcean/Content/js/demo.js"></script>
+    <script type="text/javascript" src="/MobiOcean/Content/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="/MobiOcean/Content/js/jquery.fancybox-media.js"></script>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    
+    <!--Footer -->
+    
+     <footer class="foot">
+     
+   </footer>
+    <div class="container-fluid">
+        <div class="footer">
+            <div class="container-fluid">
+                <center>
+		<ul class="footmenu">
+			<li><a class="arialregular" href="about-us">About Us</a></li>
+			<li><a class="arialregular" href="device-management">Solutions</a></li>
+			<li><a class="arialregular" href="cloud-managed">Pricing</a></li>
+			<li><a class="arialregular" href="partner">Partner</a></li>
+			<li><a class="arialregular" href="videos">Resources</a></li>
+			<li><a class="arialregular" href="blog">Blog</a></li>
+<li><a href="Contactus">Contact Us</a></li>
+			<li><a class="arialregular" href="support">Support</a></li>
+      <li>
+        <a href="term-of-use">Privacy Policy</a>
+      </li>
+      <li>
+        <a href="payment-terms">Payment Terms</a>
+      </li>     
+             <!-- Trigger the modal with a button -->
+            <!--<li><a class="arialregular" data-toggle="modal" data-target="#myModal1" style="cursor:pointer" >Become Partner </a></li>-->
+		</ul>
+		</center>
+
+
+
+
+
+
+
+                <div class="section group example" style="color: #222;">
+
+                    <div class="col-sm-3" id="col-sm-3">
+                        <a href="Contactus">
+                            <h3 class="lightgrey">Contact Us</h3>
+                        </a>
+
+
+
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="Askm">Ask A Query </button>
+                    </div>
+
+                    <!-- ================== second modal start here ====================== -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Tell us your Query</h4>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <form action="" method="post">
+                                        <div class="form-group">
+                                            <label><b>Name</b></label>
+                                            <input class="form-control" type="text" name="name" id="name" placeholder="Write Your Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><b>Company Name</b></label>
+                                            <input class="form-control" type="text" name="name" id="cname" placeholder="Write Your Company Name " required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><b>Phone Number</b></label>
+                                            <input class="form-control" type="text" name="tel" id="pnum" pattern="[0-9]{10}" title="" placeholder="Write Your Number" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><b>Email</b></label>
+                                            <input class="form-control" type="email" id="email" placeholder="Write Your Email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><b>Message</b></label><br />
+                                            <textarea cols="40" rows="4" placeholder="Write Your Messages" name="message" id="msg"></textarea>
+                                        </div>
+
+                                        <input type="submit" id="askme" class="btn btn-info btn-lg" value="Submit" />
+
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ================== second modal end here ====================== -->
+<div class="col-sm-5" style="padding: 0% 0px;">
+                        <h3 class="lightgrey arialregular" id="stay1">Stay Connected</h3>
+                        <div class="col-sm-1">&nbsp;&nbsp;&nbsp;</div>
+                        <div class="col-sm-2 col-xs-2 col-xs-2 padfooticon">
+                            <div class="facebook inlinediv">
+                                <a href="https://www.facebook.com/mobioceansolutions/" target="_blank">
+                                    <img src="/MobiOcean/Content/img/fb.png" alt="Facebook" title="Facebook" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 padfooticon">
+                            <div class="twitter inlinediv">
+                                <a href="https://twitter.com/Mobi_Ocean" target="_blank">
+                                    <img src="/MobiOcean/Content/img/twi.png" alt="Twitter" title="Twitter" />
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-2 col-xs-2 padfooticon">
+                            <div class="likedin inlinediv">
+                                <a href="https://www.linkedin.com/company/13206407" target="_blank">
+                                    <img src="/MobiOcean/Content/img/li.png" alt="LinkedIn" title="LinkedIn" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 padfooticon">
+                            <div class="googleplus inlinediv">
+                                <a href="https://www.youtube.com/watch?v=oZIQ-oxP790" target="_blank">
+                                    <img src="/MobiOcean/Content/img/yt.png" alt="YouTube" title="YouTube" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 padfooticon">
+                            <div class="googleplus inlinediv">
+                                <a href="https://plus.google.com/100872825159864456831" target="_blank">
+                                    <img src="/MobiOcean/Content/img/gplus.png" alt="Google+" title="Google+" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">&nbsp;&nbsp;&nbsp;</div>
+
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="social-icons" id="subsc">
+
+                            <h3 class="lightgrey arialregular" style="padding-right: 78px;">Subscribe</h3>
+                            <!--<div>
+                        <p class="inlinediv lightgrey arialregular" id="taglinefb">
+                        Please enter your email id to subscribe mobiocean update 
+                        </p>
+                    </div>-->
+                            <br class="hidden-lg hidden-md hidden-sm" />
+                            <form method="get" action="" id="searchFormbot" class="form-search">
+                                <div class="control-group" id="homeinput">
+                                    <input type="text" placeholder="Email-Id" id="subEmailId" name="q" class="input-medium search-query"/>
+                                    <input type="button" name="button" class="gobutton subscriptionbtn" style="margin-left: 10px; margin-right: -2px" alt="Subscribe" title="Subscribe"/>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerfull" id="copy2">
+        <div class="container">
+            <div class="copy_right" style="padding: 0px;">
+                <div class="wrapp">
+                    <div class="col-sm-4">
+                        <p class="arialregular" id="copy1">Copyright &#169; 2015.All right reserved  </p>
+                    </div>
+                    <br class="hidden-md hidden-lg" />
+                    <div class="col-sm-5" id="features_product">
+                        <ul data-spy="affix" data-offset-top="-10" style="list-style: none; z-index: 100">
+                            <li><a data-toggle="modal" data-target="#myModal3" href="javascript:;" data-dismiss="modal">Product Demo</a></li>
+
+
+                            <%string[] linkarr = wb.GetFooter().Rows[0]["link"].ToString().Split('?');
+                                string link = linkarr[1].Substring(2).ToString();%>
+
+
+                            <a href="http://www.youtube.com/v/<%:link%>?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer" class="play_icon fancybox-media pdemo" rel="media-gallery"></a>
+                            <li><a href="Free-Trial">Free 10Day Trial</a></li>
+                            <li id="#idfixed12"><a href="Contact-Sales">Contact Sales</a></li>
+                        </ul>
+
+
+                        <!-- ================== product demo start here ====================== -->
+                        <div id="myModal3" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content" id="sub1" style="margin-top: 25%">
+                                    <div class="md-modal md-effect-13 md-show" id="modal-13">
+                                        <div class="md-content pductdemo " id="emo_box">
+                                            <h3>Product Demo</h3>
+
+                                            <form class="form">
+                                            <div>
+                                                <p>To see the product demo!</p>
+                                                <div class="col-lg-4">
+                                                    <label>Enter Name</label>
+                                                    <input type="text" placeholder="Enter Name" class="form-control" id="pdemovid_Name" />
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Enter Email Id</label>
+                                                    <input type="email" placeholder="Enter Email" class="form-control" id="pdemovid" />
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Enter Mobile No</label>
+                                                    <input type="number" min="10000000" max="999999999999"  placeholder="Enter MobileNo" class="form-control" id="pdemovid_Mob" />
+                                                </div><div class="clearfix"></div>
+                                                <br />
+                                                <div class="col-lg-12">
+                                                    <a class="demoreq btn-primary btn waves-effect waves-light" href="javascript:;" data-dismiss="modal">Submit</a>
+                                                <button type="button" class="close btn-primary" data-dismiss="modal"></button>
+                                                </div>
+                                                <br /><br />
+
+                                                <%--<p>Enter Email To see the product demo!</p>
+                                                <p>
+                                                    <input id="pdemovid" type="email" placeholder="Enter Email" class="form-control" />
+                                                </p>
+                                                <a class="demoreq btn-primary btn waves-effect waves-light" href="javascript:;" data-dismiss="modal">Submit</a>
+                                                <button type="button" class="close btn-primary" data-dismiss="modal"></button>--%>
+                                            </div></form>
+                                        </div>
+                                    </div><div class="clearfix"></div><br />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ================== product demo modal end here ====================== -->
+
+
+
+
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        </p>
+							
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "js/jquery.min.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>-->
+
+     
+    
+    <%--<script src="js/jquery.min.js" type="text/javascript" ></script>
+<script src="js/bootstrap.min.js" type="text/javascript"  ></script>
+<script src="js/custom.js" type="text/javascript"  ></script>
+
+<script src="js/common.js" type="text/javascript" ></script>
+
+
+<script src="js/bounce.min.js" type="text/javascript"  ></script>
+<script src="js_css_image/main.js" type="text/javascript"  ></script>
+<script src="js/jquery.magnific-popup.js" type="text/javascript" ></script>
+
+<script src="js/demo.js" ></script>
+   <script type="text/javascript" src="js/jquery.fancybox.js" ></script>
+   <script type="text/javascript" src="js/jquery.fancybox-media.js" ></script>--%>
+
+    <!--Start of Tawk.to Script-->
+    
+    
+    <asp:ContentPlaceHolder ID="script" runat="server">
+            </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        var $_Tawk_API = {}, $_Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/579727500ec984f54f7e8c3f/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+        
+    </script>
+    <!-- Google Code for Remarketing Tag -->
+    <!---------------------------------------------------------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 861887634;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display: inline;">
+            <img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/861887634/?guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    <!-- End of LiveChat code -->
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-83818557-1', 'auto');
+        ga('send', 'pageview');
+
+        $(".up-arrow img").click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+        /* Up-Arrow control*/
+        $(".up-arrow").hide();
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                $(".up-arrow").addClass("scroll-up").slideDown();
+            } else {
+                $(".up-arrow").removeClass("scroll-up").fadeOut();
+            }
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.subscriptionbtn').click(function () {
+
+                var formURL = 'http://admin.mobiocean.com/api/Newssubscription/NewsSub';
+                var re = /\S+@\S+\.\S+/;
+                var email = $('input#subEmailId').val().trim();
+                if (email == '') {
+                    alert('Please enter Email');
+                    $('input#subEmailId').focus();
+                    return false;
+                }
+                if (!re.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+
+                $.ajax({
+                    url: formURL,
+                    type: "POST",
+                    data: { EmailId: email, IsSubscription: 1 },
+                    success: function (res, textStatus, jqXHR) {
+                        alert(res);
+                        $('input#subEmailId').val('');
+                        //if(IsSubscription==1){
+                        //	$('.pdemo').click();
+                        //}
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+
+                        alert('error');
+                    }
+                });
+
+
+                return false;
+            });
+
+        });
+
+
+        $(document).ready(function () {
+            $('#askme').click(function () {
+                //alert("Haiiiii");
+
+                var name = $("#name").val().trim();
+                var cname = $("#cname").val().trim();
+                var cmobileno = $("#pnum").val().trim();
+                var cemail = $("#email").val().trim();
+                var cdescription = $("#msg").val().trim();
+
+                var phoneno = /^\d{10}$/;
+                var formURL = 'http://admin.mobiocean.com/api/ContactUs/InsertIntoContactUs';
+                if (cname != "" && cmobileno != "" && cdescription != "" && name != "" && cemail != "") {
+
+                    if (!cmobileno.match(phoneno)) {
+                        alert("Enter valid mobile number");
+                        $('input#pnum').focus();
+                        return false;
+                    }
+
+                    if (!checkvalidemail("#email")) {
+                        alert("Enter valid email");
+                        $('input#email').focus();
+                        return false;
+                    }
+
+
+                    //showLoader();
+                    $.ajax({
+                        url: formURL,
+                        type: "POST",
+                        data: { Name: name, MobileNo: cmobileno, EmailId: cemail, Company_Name: cname, TypeOfIndustry: cname, Country: cname, Remark: cdescription },
+                        // datatype : "json",
+                        // contentType: "application/json; charset=utf-8",
+                        success: function (res, textStatus, jqXHR) {
+                            // alert(res);
+                            if (res != 0) {
+                                //showLoader();
+                                clear_contactus();
+                                $('#myModal').modal('hide');
+                                alert(res);
+                            }
+                            else {
+                                //showLoader();
+                                alert('Sorry something went wrong! Please try again later.');
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            //if fails
+                            //showLoader();
+                            alert('error');
+                        }
+                    });
+                    return false;
+                }
+
+                else {
+                    alert("Fill all required field");
+                    return false;
+                }
+
+
+            });
+
+
+        });
+        function clear_contactus() {
+            $("#cname").val("");
+            $("#pnum").val("");
+            $("#email").val("");
+            $("#name").val("");
+            $("#msg").val("");
+
+        }
+        youtube_btn = document.getElementById("youtube_btn")
+        demo_box = document.getElementById("demo_box")
+
+
+
+        $(document).ready(function (e) {
+
+            $("#youtube_btn").click(function (e) {
+
+                demo_box.style.visibility = "visible";
+
+            });
+
+        });
+
+        function checkvalidemail(id) {
+            var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+            var status;
+            if (filter.test($(id).val().trim())) {
+                status = true;
+            }
+            else {
+                status = false;
+            }
+            return status;
+        }
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $("#down").on('click', function (e) {
+                //alert();
+                window.location.href = "/API.aspx";
+
+                $('#myModaldownload').modal('toggle');
+            });
+
+        });
+
+    </script>
+    <!-- -->
+</body>
+</html>

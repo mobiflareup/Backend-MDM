@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LTCollegeVisitDAL" targetNamespace="http://tempuri.org/LTCollegeVisitDAL.xsd" xmlns:mstns="http://tempuri.org/LTCollegeVisitDAL.xsd" xmlns="http://tempuri.org/LTCollegeVisitDAL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MobiOceanConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MobiOceanConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MobiOcean.MDM.DAL.Properties.Settings.GlobalReference.Default.MobiOceanConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LTCollegeVisitTableAdapter" GeneratorDataComponentClassName="LTCollegeVisitTableAdapter" Name="LTCollegeVisit" UserDataComponentName="LTCollegeVisitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       lt.*,u.username,u.empcompanyid,rm.remark,rm.imagepath 
+FROM            dbo.LTCollegeVisit as lt
+left join tbluser as u on u.userid=lt.userid
+left join Ltcollegevisitremark as rm on rm.LTCollegeVisitId=lt.LTCollegeVisitId
+WHERE        (lt.Status = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LTCollegeVisitId" DataSetColumn="LTCollegeVisitId" />
+              <Mapping SourceColumn="ClientId" DataSetColumn="ClientId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="CollegeId" DataSetColumn="CollegeId" />
+              <Mapping SourceColumn="InLatitude" DataSetColumn="InLatitude" />
+              <Mapping SourceColumn="OutLatitude" DataSetColumn="OutLatitude" />
+              <Mapping SourceColumn="InLocation" DataSetColumn="InLocation" />
+              <Mapping SourceColumn="OutLocation" DataSetColumn="OutLocation" />
+              <Mapping SourceColumn="InTime" DataSetColumn="InTime" />
+              <Mapping SourceColumn="OutTime" DataSetColumn="OutTime" />
+              <Mapping SourceColumn="UserEnteredInTime" DataSetColumn="UserEnteredInTime" />
+              <Mapping SourceColumn="UserEnteredOutTime" DataSetColumn="UserEnteredOutTime" />
+              <Mapping SourceColumn="Forgot" DataSetColumn="Forgot" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="CreationDate" DataSetColumn="CreationDate" />
+              <Mapping SourceColumn="UpdatedBy" DataSetColumn="UpdatedBy" />
+              <Mapping SourceColumn="UpdationDate" DataSetColumn="UpdationDate" />
+              <Mapping SourceColumn="InLongitude" DataSetColumn="InLongitude" />
+              <Mapping SourceColumn="OutLongitude" DataSetColumn="OutLongitude" />
+              <Mapping SourceColumn="InLogDateTime" DataSetColumn="InLogDateTime" />
+              <Mapping SourceColumn="OutLogDateTime" DataSetColumn="OutLogDateTime" />
+              <Mapping SourceColumn="OutForgot" DataSetColumn="OutForgot" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="empcompanyid" DataSetColumn="empcompanyid" />
+              <Mapping SourceColumn="remark" DataSetColumn="remark" />
+              <Mapping SourceColumn="imagepath" DataSetColumn="imagepath" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.LTCollegeVisitRemark" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetLTCollegeVisitRemarkDetailsByLTCollegeVisitId" GetMethodModifier="Public" GetMethodName="GetLTCollegeVisitRemarkDetailsByLTCollegeVisitId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLTCollegeVisitRemarkDetailsByLTCollegeVisitId" UserSourceName="GetLTCollegeVisitRemarkDetailsByLTCollegeVisitId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ltrm.LTCollegeVisitRemarkId, ltrm.LTCollegeVisitId, ltrm.Remark, ltrm.Imagepath, ltrm.Status, ltrm.CreatedBy, ltrm.CreationDate, ltrm.UpdatedBy, ltrm.UpdationDate,ltrm.LogDateTime
+FROM            dbo.LTCollegeVisitRemark AS ltrm LEFT OUTER JOIN
+                         dbo.LTCollegeVisit AS lt ON lt.LTCollegeVisitId = ltrm.LTCollegeVisitId
+WHERE        (ltrm.LTCollegeVisitId = @LTCollegeVisitId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="LTCollegeVisitId" ColumnName="LTCollegeVisitId" DataSourceName="DBMobioceanNew.dbo.LTCollegeVisitRemark" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@LTCollegeVisitId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="LTCollegeVisitId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.InsertLTVisitDetails" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertLTVisitDetails" Modifier="Public" Name="InsertLTVisitDetails" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertLTVisitDetails">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InsertLTVisitDetails</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Latitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Longitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Location" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@UserId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ClientId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CollegeId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Time" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsInTime" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CreatedBy" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LogDateTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Forgot" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.InsertLTVisitDetails1" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertLTVisitDetails1" Modifier="Public" Name="InsertLTVisitDetails1" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertLTVisitDetails1">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InsertLTVisitDetails1</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Latitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Longitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Location" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@TowerLocation" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@ManualLocation" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@UserId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ClientId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CollegeId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Time" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsInTime" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CreatedBy" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LogDateTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Forgot" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InVerification" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsLocationManuallyEntered" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@Distance" Precision="53" ProviderType="Float" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.InsertLTVisitDetails2" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertLTVisitDetails2" Modifier="Public" Name="InsertLTVisitDetails2" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertLTVisitDetails2">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InsertLTVisitDetails2</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Latitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Longitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Location" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@TowerLocation" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@ManualLocation" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@UserId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ClientId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CollegeId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Time" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsInTime" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CreatedBy" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LogDateTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Forgot" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InVerification" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsLocationManuallyEntered" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@Distance" Precision="53" ProviderType="Float" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@LTCollegeVisitId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.InsertRemarkInLTCollegeVisitRemark" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertRemarkInLTCollegeVisitRemark" Modifier="Public" Name="InsertRemarkInLTCollegeVisitRemark" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertRemarkInLTCollegeVisitRemark">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InsertRemarkInLTCollegeVisitRemark</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UserId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Remark" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@ImagePath" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@LTCollegeVisitId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LogDateTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MobiOceanConnectionString (Settings)" DbObjectName="DBMobioceanNew.dbo.sp_Update_LtcId" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_Update_LtcId" Modifier="Public" Name="sp_Update_LtcId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="sp_Update_LtcId">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_Update_LtcId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Latitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Longitude" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Location" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@UserId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ClientId" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CollegeId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Time" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsInTime" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CreatedBy" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LogDateTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Forgot" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InVerification" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LTCollegeVisitDAL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LTCollegeVisitDAL" msprop:Generator_UserDSName="LTCollegeVisitDAL">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LTCollegeVisit" msprop:Generator_TableClassName="LTCollegeVisitDataTable" msprop:Generator_TableVarName="tableLTCollegeVisit" msprop:Generator_RowChangedName="LTCollegeVisitRowChanged" msprop:Generator_TablePropName="LTCollegeVisit" msprop:Generator_RowDeletingName="LTCollegeVisitRowDeleting" msprop:Generator_RowChangingName="LTCollegeVisitRowChanging" msprop:Generator_RowEvHandlerName="LTCollegeVisitRowChangeEventHandler" msprop:Generator_RowDeletedName="LTCollegeVisitRowDeleted" msprop:Generator_RowClassName="LTCollegeVisitRow" msprop:Generator_UserTableName="LTCollegeVisit" msprop:Generator_RowEvArgName="LTCollegeVisitRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LTCollegeVisitId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLTCollegeVisitId" msprop:Generator_ColumnPropNameInRow="LTCollegeVisitId" msprop:Generator_ColumnPropNameInTable="LTCollegeVisitIdColumn" msprop:Generator_UserColumnName="LTCollegeVisitId" type="xs:int" />
+              <xs:element name="ClientId" msprop:Generator_ColumnVarNameInTable="columnClientId" msprop:Generator_ColumnPropNameInRow="ClientId" msprop:Generator_ColumnPropNameInTable="ClientIdColumn" msprop:Generator_UserColumnName="ClientId" type="xs:long" minOccurs="0" />
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:long" minOccurs="0" />
+              <xs:element name="CollegeId" msprop:Generator_ColumnVarNameInTable="columnCollegeId" msprop:Generator_ColumnPropNameInRow="CollegeId" msprop:Generator_ColumnPropNameInTable="CollegeIdColumn" msprop:Generator_UserColumnName="CollegeId" type="xs:int" minOccurs="0" />
+              <xs:element name="InLatitude" msprop:Generator_ColumnVarNameInTable="columnInLatitude" msprop:Generator_ColumnPropNameInRow="InLatitude" msprop:Generator_ColumnPropNameInTable="InLatitudeColumn" msprop:Generator_UserColumnName="InLatitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OutLatitude" msprop:Generator_ColumnVarNameInTable="columnOutLatitude" msprop:Generator_ColumnPropNameInRow="OutLatitude" msprop:Generator_ColumnPropNameInTable="OutLatitudeColumn" msprop:Generator_UserColumnName="OutLatitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InLocation" msprop:Generator_ColumnVarNameInTable="columnInLocation" msprop:Generator_ColumnPropNameInRow="InLocation" msprop:Generator_ColumnPropNameInTable="InLocationColumn" msprop:Generator_UserColumnName="InLocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OutLocation" msprop:Generator_ColumnVarNameInTable="columnOutLocation" msprop:Generator_ColumnPropNameInRow="OutLocation" msprop:Generator_ColumnPropNameInTable="OutLocationColumn" msprop:Generator_UserColumnName="OutLocation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InTime" msprop:Generator_ColumnVarNameInTable="columnInTime" msprop:Generator_ColumnPropNameInRow="InTime" msprop:Generator_ColumnPropNameInTable="InTimeColumn" msprop:Generator_UserColumnName="InTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OutTime" msprop:Generator_ColumnVarNameInTable="columnOutTime" msprop:Generator_ColumnPropNameInRow="OutTime" msprop:Generator_ColumnPropNameInTable="OutTimeColumn" msprop:Generator_UserColumnName="OutTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserEnteredInTime" msprop:Generator_ColumnVarNameInTable="columnUserEnteredInTime" msprop:Generator_ColumnPropNameInRow="UserEnteredInTime" msprop:Generator_ColumnPropNameInTable="UserEnteredInTimeColumn" msprop:Generator_UserColumnName="UserEnteredInTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserEnteredOutTime" msprop:Generator_ColumnVarNameInTable="columnUserEnteredOutTime" msprop:Generator_ColumnPropNameInRow="UserEnteredOutTime" msprop:Generator_ColumnPropNameInTable="UserEnteredOutTimeColumn" msprop:Generator_UserColumnName="UserEnteredOutTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Forgot" msprop:Generator_ColumnVarNameInTable="columnForgot" msprop:Generator_ColumnPropNameInRow="Forgot" msprop:Generator_ColumnPropNameInTable="ForgotColumn" msprop:Generator_UserColumnName="Forgot" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" type="xs:long" minOccurs="0" />
+              <xs:element name="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" msprop:Generator_UserColumnName="CreationDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UpdatedBy" msprop:Generator_ColumnVarNameInTable="columnUpdatedBy" msprop:Generator_ColumnPropNameInRow="UpdatedBy" msprop:Generator_ColumnPropNameInTable="UpdatedByColumn" msprop:Generator_UserColumnName="UpdatedBy" type="xs:long" minOccurs="0" />
+              <xs:element name="UpdationDate" msprop:Generator_ColumnVarNameInTable="columnUpdationDate" msprop:Generator_ColumnPropNameInRow="UpdationDate" msprop:Generator_ColumnPropNameInTable="UpdationDateColumn" msprop:Generator_UserColumnName="UpdationDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InLongitude" msprop:Generator_ColumnVarNameInTable="columnInLongitude" msprop:Generator_ColumnPropNameInRow="InLongitude" msprop:Generator_ColumnPropNameInTable="InLongitudeColumn" msprop:Generator_UserColumnName="InLongitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OutLongitude" msprop:Generator_ColumnVarNameInTable="columnOutLongitude" msprop:Generator_ColumnPropNameInRow="OutLongitude" msprop:Generator_ColumnPropNameInTable="OutLongitudeColumn" msprop:Generator_UserColumnName="OutLongitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InLogDateTime" msprop:Generator_ColumnVarNameInTable="columnInLogDateTime" msprop:Generator_ColumnPropNameInRow="InLogDateTime" msprop:Generator_ColumnPropNameInTable="InLogDateTimeColumn" msprop:Generator_UserColumnName="InLogDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutLogDateTime" msprop:Generator_ColumnVarNameInTable="columnOutLogDateTime" msprop:Generator_ColumnPropNameInRow="OutLogDateTime" msprop:Generator_ColumnPropNameInTable="OutLogDateTimeColumn" msprop:Generator_UserColumnName="OutLogDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OutForgot" msprop:Generator_ColumnVarNameInTable="columnOutForgot" msprop:Generator_ColumnPropNameInRow="OutForgot" msprop:Generator_ColumnPropNameInTable="OutForgotColumn" msprop:Generator_UserColumnName="OutForgot" type="xs:int" minOccurs="0" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="empcompanyid" msprop:Generator_ColumnVarNameInTable="columnempcompanyid" msprop:Generator_ColumnPropNameInRow="empcompanyid" msprop:Generator_ColumnPropNameInTable="empcompanyidColumn" msprop:Generator_UserColumnName="empcompanyid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="remark" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="imagepath" msprop:Generator_ColumnVarNameInTable="columnimagepath" msprop:Generator_ColumnPropNameInRow="imagepath" msprop:Generator_ColumnPropNameInTable="imagepathColumn" msprop:Generator_UserColumnName="imagepath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
